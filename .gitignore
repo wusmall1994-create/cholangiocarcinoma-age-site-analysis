@@ -1,0 +1,33 @@
+# Restricted SEER data and all derived records
+data/
+derived/
+results/
+*.csv
+*.csv.gz
+*.rds
+*.RData
+*.rda
+*.dic
+*.sl
+*.slm
+
+# Manuscripts, reports, and rendered outputs
+*.doc
+*.docx
+*.pdf
+*.png
+*.svg
+*.tif
+*.tiff
+
+# Local settings and credentials
+.env
+.Renviron
+.Rhistory
+.RDataTmp
+.Rproj.user/
+renv/library/
+
+# Operating-system files
+.DS_Store
+Thumbs.db
