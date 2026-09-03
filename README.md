@@ -1,5 +1,7 @@
 # Age-specific anatomical-site contrasts in cholangiocarcinoma
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22277318.svg)](https://doi.org/10.5281/zenodo.22277318)
+
 This repository contains the R code used for a population-based analysis of whether age at diagnosis modifies cancer-specific mortality contrasts between intrahepatic and extrahepatic cholangiocarcinoma.
 
 ## Repository scope
@@ -67,3 +69,7 @@ The default analysis uses 500 patient-cluster bootstrap replicates with seed 202
 ## Licence
 
 The analysis code is released under the MIT License. The licence does not apply to SEER data or override SEER data-use conditions.
+
+## Citation
+
+Wu X, Wei H, Qiu J, Liang H. Statistical analysis code for age-specific prognostic contrasts in cholangiocarcinoma. Version 1.0.0. Zenodo. 2026. https://doi.org/10.5281/zenodo.22277318
