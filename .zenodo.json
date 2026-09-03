@@ -1,0 +1,34 @@
+{
+  "title": "Statistical analysis code for age-specific prognostic contrasts in cholangiocarcinoma",
+  "description": "R code for a population-based analysis of how age modifies the cancer-specific mortality contrast between intrahepatic and extrahepatic cholangiocarcinoma. The repository contains no SEER records, derived patient-level data, manuscript files, or analysis results.",
+  "creators": [
+    {
+      "name": "Wu, Xiaoxin",
+      "affiliation": "Department of Pathology, Longyan First Affiliated Hospital of Fujian Medical University, Longyan, Fujian, China"
+    },
+    {
+      "name": "Wei, Huijun",
+      "affiliation": "Department of Hepatobiliary Surgery, The Second Hospital of Longyan, Longyan, Fujian, China"
+    },
+    {
+      "name": "Qiu, Jianting",
+      "affiliation": "Department of Gastroenterology, The Second Hospital of Longyan, Longyan, Fujian, China"
+    },
+    {
+      "name": "Liang, Huadong",
+      "affiliation": "Department of Gastroenterology, Longyan First Affiliated Hospital of Fujian Medical University, Longyan, Fujian, China"
+    }
+  ],
+  "keywords": [
+    "cholangiocarcinoma",
+    "SEER",
+    "survival analysis",
+    "competing risks",
+    "effect modification",
+    "R"
+  ],
+  "license": "MIT",
+  "upload_type": "software",
+  "access_right": "open",
+  "version": "1.0.0"
+}

@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the archived release."
+title: "Statistical analysis code for age-specific prognostic contrasts in cholangiocarcinoma"
+type: software
+authors:
+  - family-names: Wu
+    given-names: Xiaoxin
+    affiliation: "Department of Pathology, Longyan First Affiliated Hospital of Fujian Medical University, Longyan, Fujian, China"
+  - family-names: Wei
+    given-names: Huijun
+    affiliation: "Department of Hepatobiliary Surgery, The Second Hospital of Longyan, Longyan, Fujian, China"
+  - family-names: Qiu
+    given-names: Jianting
+    affiliation: "Department of Gastroenterology, The Second Hospital of Longyan, Longyan, Fujian, China"
+  - family-names: Liang
+    given-names: Huadong
+    affiliation: "Department of Gastroenterology, Longyan First Affiliated Hospital of Fujian Medical University, Longyan, Fujian, China"
+repository-code: "https://github.com/wusmall1994-create/cholangiocarcinoma-age-site-analysis"
+url: "https://github.com/wusmall1994-create/cholangiocarcinoma-age-site-analysis"
+license: MIT
+version: 1.0.0
+date-released: 2026-09-03
+keywords:
+  - cholangiocarcinoma
+  - SEER
+  - survival analysis
+  - competing risks
+  - effect modification
+  - R
