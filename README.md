@@ -2,7 +2,7 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22277318.svg)](https://doi.org/10.5281/zenodo.22277318)
 
-This repository contains the R code used for a population-based analysis of whether age at diagnosis modifies cancer-specific mortality contrasts between intrahepatic and extrahepatic cholangiocarcinoma.
+This repository contains the R code used for a population-based analysis of age-dependent cancer-specific mortality contrasts between intrahepatic and extrahepatic cholangiocarcinoma and, where EOD schema coding is available, among intrahepatic, perihilar, and distal cholangiocarcinoma.
 
 ## Repository scope
 
@@ -40,6 +40,7 @@ Run the code from the repository root. Paths can be set through environment vari
 - `CCA_DERIVED_DIR`: private directory for derived patient-level files
 - `CCA_RESULTS_DIR`: private directory for tables, models, and figures
 - `CCA_BOOTSTRAP_B`: number of bootstrap replicates; default `500`
+- `CCA_ENHANCEMENT_BOOTSTRAP_B`: paired bootstrap replicates for comparing constant-effect and age-interaction absolute-risk models; default `500`
 
 Example in PowerShell:
 
@@ -57,14 +58,15 @@ Rscript run_all.R
 3. `03_diagnostics_extended.R`: produces continuous curves, proportional-hazards diagnostics, and complementary absolute-risk estimates.
 4. `04_figures.R`: generates the main figures from analysis outputs.
 5. `06_prepublication_analyses.R`: evaluates age top-coding, diagnosis-era interaction, detailed anatomy, adjusted cumulative incidence, and time-varying effects.
-6. `07_prepublication_figures.R`: generates figures for the extended analyses.
-7. `05_final_qc.R`: checks expected cohort counts, statistical outputs, figures, and script syntax.
+6. `08_manuscript_enhancements.R`: formally tests nonlinear interaction components, evaluates the 2000-2023 period, reports sequential adjustment and histology-schema coding, and quantifies the absolute-risk distortion caused by imposing a constant site effect.
+7. `07_prepublication_figures.R`: generates figures for the extended analyses, including the enhancement analyses.
+8. `05_final_qc.R`: checks expected cohort counts, statistical outputs, figures, and script syntax.
 
 `run_all.R` executes these scripts in dependency order. All generated files remain in the private directories specified above and are excluded by `.gitignore`.
 
 ## Reproducibility note
 
-The default analysis uses 500 patient-cluster bootstrap replicates with seed 20260902. A small value of `CCA_BOOTSTRAP_B` may be used only for a local smoke test; publication estimates require the default value.
+The standardized cumulative-incidence workflow and constant-effect comparison use 500 patient-cluster bootstrap replicates by default. Their random seeds are fixed at `20260902` and `20260910`, respectively. Smaller values of `CCA_BOOTSTRAP_B` or `CCA_ENHANCEMENT_BOOTSTRAP_B` may be used only for local smoke tests; publication estimates require the defaults.
 
 ## Licence
 

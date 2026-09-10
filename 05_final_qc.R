@@ -35,6 +35,16 @@ add_check("Formal era tests complete", nrow(era) == 4L && !anyNA(era[, .(chisq, 
 schema <- fread(file.path(results, "tables", "prepub_schema3_interaction_tests.csv"))
 add_check("Schema-3 tests complete", nrow(schema) == 2L && !anyNA(schema[, .(chisq, df, p)]), paste(nrow(schema), "rows"))
 
+nonlinearity <- fread(file.path(results, "tables", "enhancement_nonlinearity_binary.csv"))
+p_nonlinear <- nonlinearity[test == "Nonlinear interaction component" & model == "Model 1", p]
+add_check("Primary nonlinear interaction component", length(p_nonlinear) == 1L && is.finite(p_nonlinear) && p_nonlinear < 0.05,
+          format(p_nonlinear, scientific = TRUE))
+
+full_period <- fread(file.path(results, "tables", "enhancement_fullperiod_tests.csv"))
+p_full_nonlinear <- full_period[test == "Nonlinear interaction component" & model == "Model 1", p]
+add_check("Expanded-period nonlinear interaction", length(p_full_nonlinear) == 1L && is.finite(p_full_nonlinear) && p_full_nonlinear < 0.05,
+          format(p_full_nonlinear, scientific = TRUE))
+
 time_varying <- fread(file.path(results, "tables", "prepub_time_varying_tests.csv"))
 add_check("Time-varying tests complete", nrow(time_varying) == 2L && !anyNA(time_varying[, .(chisq, df, p)]), paste(nrow(time_varying), "rows"))
 
@@ -44,6 +54,14 @@ boot_successful <- prepub_qc[item == "Bootstrap successful", value]
 expected_bootstrap <- as.integer(Sys.getenv("CCA_BOOTSTRAP_B", unset = "500"))
 add_check("Adjusted-CIF bootstrap complete", boot_requested == expected_bootstrap && boot_successful == expected_bootstrap,
           paste(boot_successful, "of", boot_requested))
+
+enhancement_qc <- fread(file.path(results, "manuscript_enhancement_qc.csv"))
+enhancement_requested <- enhancement_qc[check == "CIF bootstrap requested", as.integer(value)]
+enhancement_successful <- enhancement_qc[check == "CIF bootstrap successful", as.integer(value)]
+expected_enhancement_bootstrap <- as.integer(Sys.getenv("CCA_ENHANCEMENT_BOOTSTRAP_B", unset = "500"))
+add_check("Constant-effect comparison bootstrap complete",
+          enhancement_requested == expected_enhancement_bootstrap && enhancement_successful == expected_enhancement_bootstrap,
+          paste(enhancement_successful, "of", enhancement_requested))
 
 cif_adjusted <- fread(file.path(results, "tables", "prepub_adjusted_cif5_risk_differences.csv"))
 add_check("Adjusted CIF intervals complete", nrow(cif_adjusted) == 9L &&
@@ -73,7 +91,7 @@ add_check("All figure formats exist", all(figure_ok), paste(sum(figure_ok), "of"
 scripts <- file.path(workspace, c(
   "01_import_qc.R", "02_models.R", "03_diagnostics_extended.R",
   "04_figures.R", "06_prepublication_analyses.R",
-  "07_prepublication_figures.R", "05_final_qc.R"
+  "08_manuscript_enhancements.R", "07_prepublication_figures.R", "05_final_qc.R"
 ))
 parse_ok <- vapply(scripts, function(f) {
   tryCatch({ parse(file = f); TRUE }, error = function(e) FALSE)
