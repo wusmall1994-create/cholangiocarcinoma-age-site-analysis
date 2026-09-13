@@ -75,7 +75,12 @@ schema_p <- schema_tests[model == "Model 1", p]
 time_p <- time_tests[model == "Model 1", p]
 nonlinear_p <- nonlinear_tests[test == "Nonlinear interaction component" & model == "Model 1", p]
 full_period_p <- full_period_tests[test == "Overall age-by-site interaction" & model == "Model 1", p]
-format_p <- function(p) if (p < 0.001) "P < 0.001" else paste0("P = ", sprintf("%.3f", p))
+format_p <- function(p) {
+  if (p < 0.001) return("P < 0.001")
+  if (p < 0.01) return(paste0("P = ", sprintf("%.3f", p)))
+  if (p >= 0.04 && p <= 0.06) return(paste0("P = ", sprintf("%.3f", p)))
+  paste0("P = ", sprintf("%.2f", p))
+}
 
 # A: adjusted absolute risk differences under flexible and constant site-effect models.
 rd <- fread(file.path(tables_dir, "enhancement_cif_constant_vs_flexible.csv"))
