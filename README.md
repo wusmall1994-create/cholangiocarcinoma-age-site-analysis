@@ -54,7 +54,7 @@ Rscript run_all.R
 ## Analysis sequence
 
 1. `01_import_qc.R`: imports the SEER export, harmonizes variables, defines cohorts, and performs selection checks.
-2. `02_models.R`: fits primary cause-specific, overall-survival, and competing-risk models.
+2. `02_models.R`: fits primary cause-specific and overall-survival models together with unadjusted and demographically adjusted Fine-Gray competing-risk models.
 3. `03_diagnostics_extended.R`: produces continuous curves, proportional-hazards diagnostics, and complementary absolute-risk estimates.
 4. `04_figures.R`: generates the main figures from analysis outputs.
 5. `06_prepublication_analyses.R`: evaluates age top-coding, diagnosis-era interaction, detailed anatomy, adjusted cumulative incidence, and time-varying effects.

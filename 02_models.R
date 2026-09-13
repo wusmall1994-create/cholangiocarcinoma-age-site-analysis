@@ -245,13 +245,15 @@ cox_cs_m2 <- fit_cox_pair(d_known, "os_event * 0 + (competing_event == 1L)", cov
 cox_os_m1 <- fit_cox_pair(d, "os_event", cov_model1)
 cox_os_m2 <- fit_cox_pair(d, "os_event", cov_model2)
 fg_unadjusted <- fit_fg_pair(d, character(0L))
+fg_m1 <- fit_fg_pair(d, cov_model1)
 
 relative_results <- rbindlist(list(
   cox_site_contrasts(cox_cs_m1$fit, d_known, analysis_ages, "Model 1", "Cancer-specific hazard"),
   cox_site_contrasts(cox_cs_m2$fit, d_known, analysis_ages, "Model 2", "Cancer-specific hazard"),
   cox_site_contrasts(cox_os_m1$fit, d, analysis_ages, "Model 1", "Overall mortality"),
   cox_site_contrasts(cox_os_m2$fit, d, analysis_ages, "Model 2", "Overall mortality"),
-  fg_site_contrasts(fg_unadjusted, d, character(0L), analysis_ages, "Unadjusted")
+  fg_site_contrasts(fg_unadjusted, d, character(0L), analysis_ages, "Unadjusted"),
+  fg_site_contrasts(fg_m1, d, cov_model1, analysis_ages, "Model 1")
 ))
 
 interaction_results <- rbindlist(list(
@@ -259,7 +261,8 @@ interaction_results <- rbindlist(list(
   data.table(outcome = "Cancer-specific hazard", model = "Model 2", chisq = cox_cs_m2$interaction_chisq, df = cox_cs_m2$interaction_df, p = cox_cs_m2$interaction_p),
   data.table(outcome = "Overall mortality", model = "Model 1", chisq = cox_os_m1$interaction_chisq, df = cox_os_m1$interaction_df, p = cox_os_m1$interaction_p),
   data.table(outcome = "Overall mortality", model = "Model 2", chisq = cox_os_m2$interaction_chisq, df = cox_os_m2$interaction_df, p = cox_os_m2$interaction_p),
-  data.table(outcome = "Cancer death subdistribution", model = "Unadjusted", chisq = fg_unadjusted$interaction_chisq, df = fg_unadjusted$interaction_df, p = fg_unadjusted$interaction_p)
+  data.table(outcome = "Cancer death subdistribution", model = "Unadjusted", chisq = fg_unadjusted$interaction_chisq, df = fg_unadjusted$interaction_df, p = fg_unadjusted$interaction_p),
+  data.table(outcome = "Cancer death subdistribution", model = "Model 1", chisq = fg_m1$interaction_chisq, df = fg_m1$interaction_df, p = fg_m1$interaction_p)
 ))
 
 fg_abs_data <- d_cif[cause_known == TRUE]
@@ -412,6 +415,7 @@ saveRDS(
     cox_os_m1 = cox_os_m1,
     cox_os_m2 = cox_os_m2,
     fg_unadjusted = fg_unadjusted,
+    fg_m1 = fg_m1,
     fg_absolute = fg_abs
   ),
   file.path(models_dir, "fitted_models.rds"),
@@ -423,6 +427,7 @@ analysis_summary <- c(
   paste0("Age spline boundary knots: ", paste(age_bounds, collapse = ", ")),
   paste0("Cause-specific Cox Model 2 interaction p: ", format.pval(cox_cs_m2$interaction_p, digits = 4)),
   paste0("Fine-Gray unadjusted interaction p: ", format.pval(fg_unadjusted$interaction_p, digits = 4)),
+  paste0("Fine-Gray Model 1 interaction p: ", format.pval(fg_m1$interaction_p, digits = 4)),
   paste0("Overall survival Cox Model 2 interaction p: ", format.pval(cox_os_m2$interaction_p, digits = 4)),
   paste0("Cox PH global p: ", format.pval(zph_table[term == "GLOBAL", p], digits = 4))
 )
