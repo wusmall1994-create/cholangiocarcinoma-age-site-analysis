@@ -125,7 +125,7 @@ ns_term <- paste0(
 
 cov_demographic <- c("sex_factor", "race_factor", "marital4", "income3", "rural3")
 cov_model1 <- c(cov_demographic, "era4")
-cov_model2_nograde <- c(cov_model1, "stage4", "surgery_primary", "radiation_any", "chemo_binary")
+cov_model2 <- c(cov_model1, "stage4", "surgery_primary", "radiation_any", "chemo_binary")
 
 usable_covariates <- function(data, covars) {
   covars[vapply(covars, function(v) {
@@ -211,8 +211,8 @@ site_contrasts <- function(fit, ages) {
 }
 
 # 1. Formal tests of the nonlinear component of the age interaction.
-nonlinear_binary_list <- lapply(names(list(`Model 1` = cov_model1, `Model 2 without grade` = cov_model2_nograde)), function(nm) {
-  specs <- list(`Model 1` = cov_model1, `Model 2 without grade` = cov_model2_nograde)
+nonlinear_binary_list <- lapply(names(list(`Model 1` = cov_model1, `Model 2` = cov_model2)), function(nm) {
+  specs <- list(`Model 1` = cov_model1, `Model 2` = cov_model2)
   fit <- fit_interaction_tests(d_exact_known, "site_group", specs[[nm]], "Binary anatomy, 2004-2023")
   fit$tests[, model := nm]
   fit
@@ -227,7 +227,7 @@ schema_data[, era_schema := factor(
 schema_tests_list <- lapply(
   list(
     `Model 1` = c(cov_demographic, "era_schema"),
-    `Model 2 without grade` = c(cov_demographic, "era_schema", "stage4", "surgery_primary", "radiation_any", "chemo_binary")
+    `Model 2` = c(cov_demographic, "era_schema", "stage4", "surgery_primary", "radiation_any", "chemo_binary")
   ),
   function(covars) fit_interaction_tests(schema_data, "schema3", covars, "Three-category EOD anatomy, 2010-2023")
 )
@@ -248,7 +248,7 @@ sequential_specs <- list(
   `Demographic and era` = cov_model1,
   `Plus stage` = c(cov_model1, "stage4"),
   `Plus stage and surgery` = c(cov_model1, "stage4", "surgery_primary"),
-  `Plus stage and recorded treatment` = cov_model2_nograde
+  `Plus stage and recorded treatment` = cov_model2
 )
 sequential_results <- rbindlist(lapply(names(sequential_specs), function(nm) {
   fit <- fit_interaction_tests(d_exact_known, "site_group", sequential_specs[[nm]], paste0("Sequential adjustment: ", nm))
@@ -439,6 +439,18 @@ fwrite(histology_topography_summary, file.path(tables_dir, "enhancement_histolog
 fwrite(full_period_age_counts, file.path(tables_dir, "enhancement_fullperiod_age_counts.csv"))
 fwrite(cif_model_comparison, file.path(tables_dir, "enhancement_cif_constant_vs_flexible.csv"))
 fwrite(cif_distortion, file.path(tables_dir, "enhancement_cif_distortion.csv"))
+
+# Multiplicity reporting for the three secondary scientific interaction tests.
+# The primary overall binary age-by-site interaction is the primary
+# hypothesis and is therefore reported separately from this exploratory family.
+exploratory_fdr <- rbindlist(list(
+  nonlinear_binary[test == "Nonlinear interaction component" & model == "Model 1",
+    .(analysis, test, chisq, df, p)],
+  nonlinear_schema[model == "Model 1",
+    .(analysis, test, chisq, df, p)]
+))
+exploratory_fdr[, q_bh := p.adjust(p, method = "BH")]
+fwrite(exploratory_fdr, file.path(tables_dir, "enhancement_exploratory_fdr.csv"))
 if (nrow(boot_comparison)) fwrite(boot_comparison, file.path(source_dir, "enhancement_cif_model_bootstrap.csv.gz"))
 if (nrow(boot_distortion)) fwrite(boot_distortion, file.path(source_dir, "enhancement_cif_distortion_bootstrap.csv.gz"))
 
@@ -446,6 +458,7 @@ saveRDS(
   list(
     nonlinear_binary = nonlinear_binary_list,
     nonlinear_schema = schema_tests_list,
+    exploratory_fdr = exploratory_fdr,
     full_period = full_period,
     flexible_cif_fits = flexible_fits,
     constant_cif_fits = constant_fits,

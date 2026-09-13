@@ -133,8 +133,8 @@ ns_all_term <- paste0(
 
 cov_demographic <- c("sex_factor", "race_factor", "marital4", "income3", "rural3")
 cov_model1 <- c(cov_demographic, "era4")
-cov_model2 <- c(cov_model1, "stage4", "grade4", "surgery_primary", "radiation_any", "chemo_binary")
-cov_model2_nograde <- setdiff(cov_model2, "grade4")
+cov_model2 <- c(cov_model1, "stage4", "surgery_primary", "radiation_any", "chemo_binary")
+cov_model2_grade <- c(cov_model2, "grade4")
 
 usable_covariates <- function(data, covars) {
   covars[vapply(covars, function(v) {
@@ -246,7 +246,7 @@ exposure_contrasts <- function(fit, exposure, ages, modifier = NULL, modifier_va
 exact_specs <- list(
   `Model 1` = cov_model1,
   `Model 2` = cov_model2,
-  `Model 2 without grade` = cov_model2_nograde
+  `Model 2 with grade` = cov_model2_grade
 )
 exact_fits <- lapply(exact_specs, function(covars) {
   fit_age_exposure(d_exact_known, "site_group", covars)
@@ -296,7 +296,7 @@ fit_age85_indicator <- function(data, covars) {
 
 age85_fits <- list(
   `Model 1` = fit_age85_indicator(d, cov_model1),
-  `Model 2 without grade` = fit_age85_indicator(d, cov_model2_nograde)
+  `Model 2` = fit_age85_indicator(d, cov_model2)
 )
 age85_tests <- rbindlist(lapply(names(age85_fits), function(nm) {
   fit <- age85_fits[[nm]]
@@ -355,7 +355,7 @@ fit_era_threeway <- function(data, covars, horizon, last_year) {
 
 era_specs <- list(
   `Model 1` = cov_model1,
-  `Model 2 without grade` = cov_model2_nograde
+  `Model 2` = cov_model2
 )
 era_fits_24 <- lapply(era_specs, function(covars) {
   fit_era_threeway(d_exact_known, covars, horizon = 24, last_year = 2021)
@@ -411,7 +411,7 @@ schema_cov_m1 <- c(cov_demographic, "era_schema")
 schema_cov_m2_nograde <- c(schema_cov_m1, "stage4", "surgery_primary", "radiation_any", "chemo_binary")
 schema_fits <- list(
   `Model 1` = fit_age_exposure(schema_data, "schema3", schema_cov_m1),
-  `Model 2 without grade` = fit_age_exposure(schema_data, "schema3", schema_cov_m2_nograde)
+  `Model 2` = fit_age_exposure(schema_data, "schema3", schema_cov_m2_nograde)
 )
 schema_tests <- rbindlist(lapply(names(schema_fits), function(nm) {
   fit <- schema_fits[[nm]]
@@ -443,7 +443,7 @@ setorder(schema_crosswalk, site_group, eod_schema, tnm_schema)
 hist8160_data <- droplevels(d_exact_known[histology_code == 8160L])
 hist8160_fits <- list(
   `Model 1` = fit_age_exposure(hist8160_data, "site_group", cov_model1),
-  `Model 2 without grade` = fit_age_exposure(hist8160_data, "site_group", cov_model2_nograde)
+  `Model 2` = fit_age_exposure(hist8160_data, "site_group", cov_model2)
 )
 hist8160_tests <- rbindlist(lapply(names(hist8160_fits), function(nm) {
   fit <- hist8160_fits[[nm]]
@@ -667,7 +667,7 @@ fit_time_varying <- function(data, covars) {
 
 time_fits <- list(
   `Model 1` = fit_time_varying(d_exact_known, cov_model1),
-  `Model 2 without grade` = fit_time_varying(d_exact_known, cov_model2_nograde)
+  `Model 2` = fit_time_varying(d_exact_known, cov_model2)
 )
 time_tests <- rbindlist(lapply(names(time_fits), function(nm) {
   fit <- time_fits[[nm]]

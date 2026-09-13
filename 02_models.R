@@ -106,7 +106,8 @@ age_bounds <- range(d$age_years, na.rm = TRUE)
 spline_term <- "splines::ns(age_years, knots = age_knots, Boundary.knots = age_bounds)"
 
 cov_model1 <- c("sex_factor", "race_factor", "marital4", "income3", "rural3", "era4")
-cov_model2 <- c(cov_model1, "stage4", "grade4", "surgery_primary", "radiation_any", "chemo_binary")
+cov_model2 <- c(cov_model1, "stage4", "surgery_primary", "radiation_any", "chemo_binary")
+cov_model2_grade <- c(cov_model2, "grade4")
 
 rhs_text <- function(covars, interaction = TRUE) {
   age_site <- if (interaction) paste0(spline_term, " * site_group") else paste0(spline_term, " + site_group")

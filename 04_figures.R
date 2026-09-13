@@ -147,7 +147,7 @@ p_relative <- ggplot(curves, aes(age, estimate)) +
   labs(title = "Age continuously modifies the mortality contrast between anatomical sites",
        subtitle = "Relative effect for eCCA versus iCCA; shaded bands are 95% confidence intervals",
        x = "Age at diagnosis, years", y = "Relative effect (log scale)",
-       caption = "Model 1 adjusts for demographics and diagnosis era. Model 2 additionally conditions on stage, grade, and treatment.\nThe Fine-Gray curve is unadjusted and addresses the cancer-death subdistribution.") +
+       caption = "Model 1 adjusts for demographics and diagnosis era. Model 2 additionally conditions on stage and recorded treatment.\nThe Fine-Gray curve is unadjusted and addresses the cancer-death subdistribution.") +
   theme_paper(8.5) +
   theme(strip.text = element_text(face = "bold", colour = ink, lineheight = 1.05), legend.position = "none")
 export_figure(p_relative, "Figure2_age_relative_effects", 7.5, 4.3)

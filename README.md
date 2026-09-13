@@ -58,7 +58,7 @@ Rscript run_all.R
 3. `03_diagnostics_extended.R`: produces continuous curves, proportional-hazards diagnostics, and complementary absolute-risk estimates.
 4. `04_figures.R`: generates the main figures from analysis outputs.
 5. `06_prepublication_analyses.R`: evaluates age top-coding, diagnosis-era interaction, detailed anatomy, adjusted cumulative incidence, and time-varying effects.
-6. `08_manuscript_enhancements.R`: formally tests nonlinear interaction components, evaluates the 2000-2023 period, reports sequential adjustment and histology-schema coding, and quantifies the absolute-risk distortion caused by imposing a constant site effect.
+6. `08_manuscript_enhancements.R`: formally tests nonlinear interaction components, evaluates the 2000-2023 period, reports sequential adjustment and histology-schema coding, quantifies the absolute-risk distortion caused by imposing a constant site effect, and applies Benjamini-Hochberg correction to the defined exploratory interaction family.
 7. `07_prepublication_figures.R`: generates figures for the extended analyses, including the enhancement analyses.
 8. `05_final_qc.R`: checks expected cohort counts, statistical outputs, figures, and script syntax.
 
