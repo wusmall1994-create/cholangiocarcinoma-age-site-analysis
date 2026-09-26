@@ -50,8 +50,21 @@ ci<-boot[,.(lower95=quantile(difference_eCCA_minus_iCCA,.025,type=6),upper95=qua
 fwrite(curves,file.path(ext_dir,"competing_risk_curves.csv"));fwrite(point,file.path(ext_dir,"age_group_competing_rmtl.csv"));fwrite(merge(pw,ci,by="age_group3"),file.path(ext_dir,"cancer_rmtl_differences.csv"))
 p<-ggplot(curves[cause=="Other-cause death"],aes(month,100*cif,color=site_group))+geom_step(linewidth=.75)+facet_wrap(~age_group3,nrow=1)+scale_color_manual(values=c(iCCA="#6B6B6B",eCCA="#1F78B4"))+labs(x="Months since diagnosis",y="Other-cause cumulative incidence (%)",color=NULL)+theme_classic(base_size=9)+theme(legend.position="bottom")
 ggsave(file.path(ext_dir,"Figure_S2_other_cause_CIF.png"),p,width=183,height=70,units="mm",dpi=600,bg="white")
-nodes<-data.table(name=c("Demographic and\ncontextual factors","Anatomical site","Stage at\npresentation","Recorded\ntreatment","Cancer death","Other-cause\ndeath"),x=c(1,1,2.6,4.2,5.8,5.8),y=c(2.8,1.2,1.2,1.2,1.2,2.8))
-edges<-data.table(x=c(1,1,1,1,2.6,4.2,1),y=c(2.55,2.55,1.2,1.2,1.2,1.2,2.8),xend=c(1,5.55,2.35,5.55,3.95,5.55,5.55),yend=c(1.45,2.8,1.2,1.2,1.2,1.2,2.8))
-pdag<-ggplot()+geom_segment(data=edges,aes(x,y,xend=xend,yend=yend),arrow=arrow(length=grid::unit(2,"mm")),linewidth=.45)+geom_label(data=nodes,aes(x,y,label=name),size=3,linewidth=.3,fill="white")+annotate("text",x=3.5,y=.45,label="Model 1 targets the overall population prognostic association; Model 2 conditions on stage and treatment.",size=3)+coord_cartesian(xlim=c(.2,6.6),ylim=c(.2,3.4),clip="off")+theme_void()
-ggsave(file.path(ext_dir,"Figure_S3_DAG.png"),pdag,width=175,height=75,units="mm",dpi=600,bg="white")
+
+# Additive-scale contrasts between standardized fixed-age risk differences.
+rd_boot_file <- file.path(source_dir,"adjusted_cif_rd_bootstrap_replicates.csv.gz")
+rd_point_file <- file.path(tables_dir,"prepub_adjusted_cif5_risk_differences.csv")
+if (file.exists(rd_boot_file) && file.exists(rd_point_file)) {
+ rb<-fread(rd_boot_file)[target_type=="Fixed age" & target%in%c("50","65","75")]
+ rw<-dcast(rb,replicate~target,value.var="risk_difference_eCCA_minus_iCCA")
+ rp<-fread(rd_point_file)[target_type=="Fixed age" & target%in%c("50","65","75")]
+ rv<-setNames(rp$risk_difference_eCCA_minus_iCCA,rp$target)
+ additive<-data.table(
+  contrast=c("Age 65 minus age 50","Age 75 minus age 50"),
+  estimate=c(rv[["65"]]-rv[["50"]],rv[["75"]]-rv[["50"]]),
+  lower95=c(quantile(rw[["65"]]-rw[["50"]],.025,type=6),quantile(rw[["75"]]-rw[["50"]],.025,type=6)),
+  upper95=c(quantile(rw[["65"]]-rw[["50"]],.975,type=6),quantile(rw[["75"]]-rw[["50"]],.975,type=6)),
+  bootstrap_replicates=nrow(rw))
+ fwrite(additive,file.path(ext_dir,"additive_scale_rd_contrasts.csv"))
+}
 cat("Reporting extensions complete; RMTL bootstrap:",B,"\n")

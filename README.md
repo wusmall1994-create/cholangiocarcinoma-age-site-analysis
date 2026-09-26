@@ -60,7 +60,7 @@ Rscript run_all.R
 4. `04_figures.R`: generates the main figures from analysis outputs.
 5. `06_prepublication_analyses.R`: evaluates age top-coding, diagnosis-era interaction, detailed anatomy, adjusted cumulative incidence, and time-varying effects.
 6. `08_manuscript_enhancements.R`: formally tests nonlinear interaction components, evaluates the 2000-2023 period, reports sequential adjustment and histology-schema coding, quantifies the absolute-risk distortion caused by imposing a constant site effect, and applies Benjamini-Hochberg correction to the defined exploratory interaction family.
-7. `09_reporting_extensions.R`: evaluates the histology-8160-only EOD analysis, other-cause cumulative incidence, five-year cancer-death restricted mean time lost, and the estimand DAG.
+7. `09_reporting_extensions.R`: evaluates the histology-8160-only EOD analysis, unadjusted other-cause cumulative incidence, descriptive five-year cancer-death restricted mean time lost, and additive-scale contrasts between standardized age-specific risk differences.
 8. `07_prepublication_figures.R`: generates figures for the extended analyses, including the enhancement analyses.
 9. `05_final_qc.R`: checks expected cohort counts, statistical outputs, figures, and script syntax.
 

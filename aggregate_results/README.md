@@ -6,4 +6,4 @@ These files contain non-identifiable aggregate outputs used in the revised manus
 - `complete_case_model_fit.csv`: complete-case interaction tests.
 - `eod_histology8160_tests.csv`: histology-8160-only three-category EOD sensitivity analysis.
 - `cancer_rmtl_differences.csv`: five-year cancer-death restricted mean time lost by age group, including 1000 patient-cluster bootstrap confidence intervals.
-
+- `additive_scale_rd_contrasts.csv`: bootstrap contrasts between standardized five-year cancer-death risk differences at ages 65 and 75 and the corresponding risk difference at age 50.
