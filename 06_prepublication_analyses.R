@@ -550,7 +550,7 @@ cif_fits <- fit_cif_models(cif_data)
 cif_point <- cif_targets(cif_data, cif_fits)
 cif_point_rd <- add_risk_differences(cif_point)
 
-bootstrap_replicates <- as.integer(Sys.getenv("CCA_BOOTSTRAP_B", unset = "500"))
+bootstrap_replicates <- as.integer(Sys.getenv("CCA_BOOTSTRAP_B", unset = "1000"))
 bootstrap_seed <- 20260902L
 cluster_rows <- split(seq_len(nrow(cif_data)), cif_data$patient_id)
 

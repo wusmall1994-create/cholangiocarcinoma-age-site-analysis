@@ -51,14 +51,14 @@ add_check("Time-varying tests complete", nrow(time_varying) == 2L && !anyNA(time
 prepub_qc <- fread(file.path(results, "prepublication_qc.csv"))
 boot_requested <- prepub_qc[item == "Bootstrap requested", value]
 boot_successful <- prepub_qc[item == "Bootstrap successful", value]
-expected_bootstrap <- as.integer(Sys.getenv("CCA_BOOTSTRAP_B", unset = "500"))
+expected_bootstrap <- as.integer(Sys.getenv("CCA_BOOTSTRAP_B", unset = "1000"))
 add_check("Adjusted-CIF bootstrap complete", boot_requested == expected_bootstrap && boot_successful == expected_bootstrap,
           paste(boot_successful, "of", boot_requested))
 
 enhancement_qc <- fread(file.path(results, "manuscript_enhancement_qc.csv"))
 enhancement_requested <- enhancement_qc[check == "CIF bootstrap requested", as.integer(value)]
 enhancement_successful <- enhancement_qc[check == "CIF bootstrap successful", as.integer(value)]
-expected_enhancement_bootstrap <- as.integer(Sys.getenv("CCA_ENHANCEMENT_BOOTSTRAP_B", unset = "500"))
+expected_enhancement_bootstrap <- as.integer(Sys.getenv("CCA_ENHANCEMENT_BOOTSTRAP_B", unset = "1000"))
 add_check("Constant-effect comparison bootstrap complete",
           enhancement_requested == expected_enhancement_bootstrap && enhancement_successful == expected_enhancement_bootstrap,
           paste(enhancement_successful, "of", enhancement_requested))

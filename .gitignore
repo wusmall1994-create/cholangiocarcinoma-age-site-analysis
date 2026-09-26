@@ -4,6 +4,8 @@ derived/
 results/
 *.csv
 *.csv.gz
+!aggregate_results/
+!aggregate_results/*.csv
 *.rds
 *.RData
 *.rda

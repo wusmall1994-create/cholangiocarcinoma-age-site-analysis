@@ -17,6 +17,7 @@ scripts <- c(
   "04_figures.R",
   "06_prepublication_analyses.R",
   "08_manuscript_enhancements.R",
+  "09_reporting_extensions.R",
   "07_prepublication_figures.R",
   "05_final_qc.R"
 )

@@ -361,7 +361,7 @@ setnames(
 )
 cif_distortion_point[, constant_minus_flexible := rd_constant - rd_flexible]
 
-bootstrap_replicates <- as.integer(Sys.getenv("CCA_ENHANCEMENT_BOOTSTRAP_B", unset = "500"))
+bootstrap_replicates <- as.integer(Sys.getenv("CCA_ENHANCEMENT_BOOTSTRAP_B", unset = "1000"))
 bootstrap_seed <- 20260910L
 cluster_rows <- split(seq_len(nrow(d_cif)), d_cif$patient_id)
 

@@ -1,4 +1,4 @@
-# Age-specific anatomical-site contrasts in cholangiocarcinoma
+# Age-related heterogeneity in anatomical-site mortality contrasts in cholangiocarcinoma
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22693117.svg)](https://doi.org/10.5281/zenodo.22693117)
 
@@ -6,7 +6,7 @@ This repository contains the R code used for a population-based analysis of age-
 
 ## Repository scope
 
-Only statistical analysis code is included. The repository does not contain SEER records, derived patient-level data, model objects, numerical results, figures, tables, manuscripts, submission files, credentials, or personal information.
+The repository includes statistical analysis code and selected non-identifiable aggregate result files documenting key model checks and sensitivity analyses. It does not contain SEER records, derived patient-level data, model objects, manuscripts, submission files, credentials, or personal information.
 
 ## Data access
 
@@ -39,8 +39,9 @@ Run the code from the repository root. Paths can be set through environment vari
 - `CCA_INPUT_CSV`: SEER case-listing CSV
 - `CCA_DERIVED_DIR`: private directory for derived patient-level files
 - `CCA_RESULTS_DIR`: private directory for tables, models, and figures
-- `CCA_BOOTSTRAP_B`: number of bootstrap replicates; default `500`
-- `CCA_ENHANCEMENT_BOOTSTRAP_B`: paired bootstrap replicates for comparing constant-effect and age-interaction absolute-risk models; default `500`
+- `CCA_BOOTSTRAP_B`: number of patient-cluster bootstrap replicates; default `1000`
+- `CCA_ENHANCEMENT_BOOTSTRAP_B`: paired bootstrap replicates for comparing constant-effect and age-interaction absolute-risk models; default `1000`
+- `CCA_RMTL_BOOTSTRAP_B`: patient-cluster bootstrap replicates for five-year cancer-death restricted mean time lost; default `1000`
 
 Example in PowerShell:
 
@@ -59,14 +60,15 @@ Rscript run_all.R
 4. `04_figures.R`: generates the main figures from analysis outputs.
 5. `06_prepublication_analyses.R`: evaluates age top-coding, diagnosis-era interaction, detailed anatomy, adjusted cumulative incidence, and time-varying effects.
 6. `08_manuscript_enhancements.R`: formally tests nonlinear interaction components, evaluates the 2000-2023 period, reports sequential adjustment and histology-schema coding, quantifies the absolute-risk distortion caused by imposing a constant site effect, and applies Benjamini-Hochberg correction to the defined exploratory interaction family.
-7. `07_prepublication_figures.R`: generates figures for the extended analyses, including the enhancement analyses.
-8. `05_final_qc.R`: checks expected cohort counts, statistical outputs, figures, and script syntax.
+7. `09_reporting_extensions.R`: evaluates the histology-8160-only EOD analysis, other-cause cumulative incidence, five-year cancer-death restricted mean time lost, and the estimand DAG.
+8. `07_prepublication_figures.R`: generates figures for the extended analyses, including the enhancement analyses.
+9. `05_final_qc.R`: checks expected cohort counts, statistical outputs, figures, and script syntax.
 
 `run_all.R` executes these scripts in dependency order. All generated files remain in the private directories specified above and are excluded by `.gitignore`.
 
 ## Reproducibility note
 
-The standardized cumulative-incidence workflow and constant-effect comparison use 500 patient-cluster bootstrap replicates by default. Their random seeds are fixed at `20260902` and `20260910`, respectively. Smaller values of `CCA_BOOTSTRAP_B` or `CCA_ENHANCEMENT_BOOTSTRAP_B` may be used only for local smoke tests; publication estimates require the defaults.
+The standardized cumulative-incidence workflow, constant-effect comparison, and RMTL analysis use 1000 patient-cluster bootstrap replicates by default. Their random seeds are fixed. Smaller values may be used only for local smoke tests; publication estimates require the defaults.
 
 ## Licence
 
