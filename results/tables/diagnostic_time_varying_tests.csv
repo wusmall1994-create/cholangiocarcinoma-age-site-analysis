@@ -1,0 +1,3 @@
+analysis,model,n,cancer_deaths,split_rows,chisq,df,p
+Six-interval time-varying age-by-site effect,Model 1,25400,18064,55876,21.13725011528,20,0.389094070545618
+Six-interval time-varying age-by-site effect,Model 2,25400,18064,55876,24.7346236543381,20,0.211772910722562

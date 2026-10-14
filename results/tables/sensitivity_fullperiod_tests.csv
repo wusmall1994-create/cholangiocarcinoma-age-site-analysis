@@ -1,0 +1,3 @@
+analysis,test,n,cancer_deaths,chisq,df,p,model
+"Binary anatomy, 2000-2023",Overall age-by-site interaction,27455,19789,14.1391399458516,4,0.00686396662464133,Model 1
+"Binary anatomy, 2000-2023",Nonlinear interaction component,27455,19789,8.57290801522322,3,0.0355427644898378,Model 1

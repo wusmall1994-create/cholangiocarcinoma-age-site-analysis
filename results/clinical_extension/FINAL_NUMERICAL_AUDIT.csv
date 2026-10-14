@@ -1,0 +1,4 @@
+analysis,replicates,replicates_with_diagnostics,max_probability_identity_error,max_decomposition_identity_error,status
+bootstrap,1000,0,2.22044604925031e-16,2.77555756156289e-16,PASS
+auxiliary_bootstrap,1000,677,2.22044604925031e-16,0,PASS
+original_ridge_bootstrap,1000,0,2.22044604925031e-16,0,PASS

@@ -1,0 +1,37 @@
+{
+  "remedy": "Fixed weak ridge Cox fits for BOTH death causes, applied consistently to all six analysis specifications and all replicates; theta=0.1, scale=FALSE, penalty=theta/2 times sum of squared coefficients; eps=1e-11, iter.max=60.",
+  "penalty_basis": "Original treatment-coded covariates and fixed natural-spline design matrix, intercept omitted. No tuning against significance or bootstrap intervals.",
+  "sensitivity_theta": [
+    0.01,
+    0.1,
+    1
+  ],
+  "composition_model": "Unpenalized logistic model with original fixed age spline; convergence checked.",
+  "population": "2010\u20132018 base cohort. No sparse-category patients removed or reassigned.",
+  "target": "Original EOD-classifiable cohort, resampled as part of the same source-patient bootstrap; common within each replicate across all definitions and 8160 restriction.",
+  "B": 1000,
+  "seed_for_replicate_b": "202610110 + b",
+  "resampling": "Sample original unique patient clusters with replacement from full binary source cohort; physically duplicate all records for selected patient, preserve Efron ties. Apply case definitions AFTER the same resampling.",
+  "analyses": [
+    "EOD",
+    "EOD_8160",
+    "D1_topography",
+    "D2_exclude_discordant",
+    "D3_8160_only",
+    "D4_reallocate_8162"
+  ],
+  "paired_contrasts": "EOD_8160 minus EOD for each decomposition component and each age-specific RD; D2/D3/D4 minus D1 for age-specific RDs and age-75 minus age-50 RD changes.",
+  "horizons_months": [
+    12,
+    36,
+    60
+  ],
+  "ages": [
+    50,
+    75
+  ],
+  "intervals": "Pointwise 95 percent percentile intervals, R quantile type 7; not simultaneous, not equivalence tests.",
+  "prediction_optimization": "Aggregate identical adjustment covariates with exact empirical weights; verified against original full-row prediction at tolerance 1e-10. No subsampling of target.",
+  "failure_policy": "Save all diagnostic messages and errors per replicate. Do not silently replace, exclude, or treat warned replicates as clean. Audit before inference.",
+  "interpretation": "Descriptive synthetic-mixture decomposition, not causal mediation; D4 is hypothetical reassignment, not validated correction. Penalized extension is distinct from original unpenalized manuscript model."
+}

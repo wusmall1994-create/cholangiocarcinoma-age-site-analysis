@@ -1,0 +1,732 @@
+[
+  {
+    "file": ".gitattributes",
+    "bytes": 8,
+    "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+  },
+  {
+    "file": ".gitignore",
+    "bytes": 129,
+    "sha256": "6ea47c5a1740be9ac85cd796910485370a6d1f27922413397c722eb53564c7d2"
+  },
+  {
+    "file": ".zenodo.json",
+    "bytes": 1498,
+    "sha256": "1117913f726d850d79f2296e72df5781d9ba17131b1870d65f8216236aa643f2"
+  },
+  {
+    "file": "CITATION.cff",
+    "bytes": 1311,
+    "sha256": "fd24a955861134842c35e027acfdc0dc0d56ae9e109ffeecb379d4758fae1dd4"
+  },
+  {
+    "file": "LICENSE",
+    "bytes": 1089,
+    "sha256": "3ef8e2476577d25a86ad4b77a56196eb9cfb69c3ada51c73b1d43209e018ed5f"
+  },
+  {
+    "file": "README.md",
+    "bytes": 6493,
+    "sha256": "15531190efd95bf3ddcdd798be584e3f668b844d0c474184dacb9560e7c8dfe4"
+  },
+  {
+    "file": "results/clinical_extension/FINAL_NUMERICAL_AUDIT.csv",
+    "bytes": 304,
+    "sha256": "1d585f06ea9dbf171f186ba3d6e31fab1b02867b16830af46e68c2cc524a8842"
+  },
+  {
+    "file": "results/clinical_extension/PH_replication_audit.csv",
+    "bytes": 1487,
+    "sha256": "0a6d2be913c31490b0ecdcf89cd58288100aaeb187adf67afda6b431b0c1d8bd"
+  },
+  {
+    "file": "results/clinical_extension/R_SESSION_INFO.txt",
+    "bytes": 482,
+    "sha256": "89483d2a96632df33186055bebc961a9f1405ea5ab4b08b178cb4baf549d6d44"
+  },
+  {
+    "file": "results/clinical_extension/auxiliary_bootstrap_diagnostics.csv",
+    "bytes": 55787,
+    "sha256": "1a3e498c44b749f65d129e20ca0c6987ded467c2412a5b269dec7ba421cabfc2"
+  },
+  {
+    "file": "results/clinical_extension/auxiliary_bootstrap_status.csv",
+    "bytes": 69,
+    "sha256": "0ec9217f77dfe33e94c80c158d8447f19188bd082a359137f8271a77f5ee7295"
+  },
+  {
+    "file": "results/clinical_extension/bootstrap_status.csv",
+    "bytes": 67,
+    "sha256": "61e62cecd6fe1c4a276ebf7cbc96171123477cdfa2722ed0bf42dbebce528310"
+  },
+  {
+    "file": "results/clinical_extension/cohorts.csv",
+    "bytes": 105,
+    "sha256": "16921d57cffbe6b2d034d0fd8b50afeba6fe2c8da36bc4c8e6e79142babdfd73"
+  },
+  {
+    "file": "results/clinical_extension/conditional_composition_POINT_ONLY.csv",
+    "bytes": 2173,
+    "sha256": "c99bdf3edb58b64945b816f4354a0e654430b3066ba8ba20eda1e4e62f4ca5db"
+  },
+  {
+    "file": "results/clinical_extension/harmonized_EOD_recorded_chemotherapy_distribution.csv",
+    "bytes": 1699,
+    "sha256": "ff3163302c6f3d43963ff60f168985237d6645820193df0e437f9989ba3274ad"
+  },
+  {
+    "file": "results/clinical_extension/harmonized_EOD_stage_distribution.csv",
+    "bytes": 3353,
+    "sha256": "7e4f3b7d533600fcd5d89f544420647b9a9d91506a3fdf685753b76f40912eec"
+  },
+  {
+    "file": "results/clinical_extension/harmonized_EOD_states.csv",
+    "bytes": 6974,
+    "sha256": "b46feafaf2bc4dabe887ef2730018e2a437476903677c60da30dbf0e0e247723"
+  },
+  {
+    "file": "results/clinical_extension/harmonized_EOD_surgery_distribution.csv",
+    "bytes": 2239,
+    "sha256": "fc44f4c4e1058f8b1c7fa528b0f7f09a777b564d70f88acb196b8dd238a97938"
+  },
+  {
+    "file": "results/clinical_extension/harmonized_decomposition_states.csv",
+    "bytes": 7916,
+    "sha256": "7d555dad79864ef296737ce3714300744f3da0a0cb5b50db5177e374d723a196"
+  },
+  {
+    "file": "results/clinical_extension/harmonized_decomposition_with_CI.csv",
+    "bytes": 18648,
+    "sha256": "a41a4311efb6c5fa9c04b44f31be475f9e98dc794544b3efc60c7a99188bfd9d"
+  },
+  {
+    "file": "results/clinical_extension/harmonized_subtype_RDs_with_CI.csv",
+    "bytes": 12212,
+    "sha256": "9b48393426406eb2b7617bfb7379f650aa37ec9b27082289498029b67035509f"
+  },
+  {
+    "file": "results/clinical_extension/harmonized_subtype_states_with_CI.csv",
+    "bytes": 15671,
+    "sha256": "5df4352f42107c92d8f24a630fb066ed3379604a9587aaef23782a530c854ecc"
+  },
+  {
+    "file": "results/clinical_extension/interval_minus_PH_paired_CI.csv",
+    "bytes": 12294,
+    "sha256": "978f459c925e54914e7fb3e597436688470714bae33a7d5180da1ddf5c466102"
+  },
+  {
+    "file": "results/clinical_extension/numerical_warning_tolerance_check.csv",
+    "bytes": 64,
+    "sha256": "e89f22d23643161fab796d7c45b10fcfc08d373c4fedd7bad2e456ec3cac69cc"
+  },
+  {
+    "file": "results/clinical_extension/original_RDs_with_CI.csv",
+    "bytes": 5488,
+    "sha256": "6491caf4bbd02ee24463baac49e547ca6164f934ec6eb35d976ee5909d9fbfe0"
+  },
+  {
+    "file": "results/clinical_extension/original_age65_age75_contrasts_with_CI.csv",
+    "bytes": 2851,
+    "sha256": "0bae5950f94bda2bf17bcf7c62ae796e68df887f639e9809e84e86f6c9458137"
+  },
+  {
+    "file": "results/clinical_extension/original_age_contrasts_with_CI.csv",
+    "bytes": 1864,
+    "sha256": "319eb7bc307ec4b80671726192e37d4fceccdba961b27c17596dcfeb549719bf"
+  },
+  {
+    "file": "results/clinical_extension/original_binary_recorded_chemotherapy_distribution.csv",
+    "bytes": 1058,
+    "sha256": "78ce30f33b871c5dc80d3434e60b0940c64705ac2e21c856168934cb0faf7920"
+  },
+  {
+    "file": "results/clinical_extension/original_binary_stage_distribution.csv",
+    "bytes": 2086,
+    "sha256": "8ae7dbb23448862a0561252506ca4eee80a4314bf3f533241dbc22d9939d1fdf"
+  },
+  {
+    "file": "results/clinical_extension/original_binary_state_RDs.csv",
+    "bytes": 3373,
+    "sha256": "372c956b4927f1ddb73e3c9009ff3815af5c7d0b1de2d42829d0b20e4fd9328b"
+  },
+  {
+    "file": "results/clinical_extension/original_binary_states.csv",
+    "bytes": 2084,
+    "sha256": "088a55b63e3dba93cb83a16595372adcb395ec080c8ec80465c3254f9f5930e2"
+  },
+  {
+    "file": "results/clinical_extension/original_binary_surgery_distribution.csv",
+    "bytes": 1485,
+    "sha256": "9e9d649a247f1b3bd2f9a5768a0c4d046d318dd99dd999d6e90dd226fac2439e"
+  },
+  {
+    "file": "results/clinical_extension/original_bootstrap_warning_mechanism.csv",
+    "bytes": 1154,
+    "sha256": "632f4cec9bf0110739a0acaeb61d92346f1ce1c04a44da1450e1bfc17e73b7c9"
+  },
+  {
+    "file": "results/clinical_extension/original_ridge_RDs_with_CI.csv",
+    "bytes": 5487,
+    "sha256": "4dd0055a1ad87daeb980710395da5ac10b26adac4b585a1235a141bcc2f14e9f"
+  },
+  {
+    "file": "results/clinical_extension/original_ridge_bootstrap_status.csv",
+    "bytes": 67,
+    "sha256": "61e62cecd6fe1c4a276ebf7cbc96171123477cdfa2722ed0bf42dbebce528310"
+  },
+  {
+    "file": "results/clinical_extension/original_ridge_states_POINT.csv",
+    "bytes": 2089,
+    "sha256": "71cbe19c54466d11ab346b9548553f2e85baa3aea535dd7966d8e4e0ce7a09ed"
+  },
+  {
+    "file": "results/clinical_extension/original_ridge_states_with_CI.csv",
+    "bytes": 9354,
+    "sha256": "a6b6cfd66ba281c1b45abe862206c2e519b3766c407c1950fadb3f6810e89d10"
+  },
+  {
+    "file": "results/clinical_extension/original_single_row_exclusion_sensitivity.csv",
+    "bytes": 2091,
+    "sha256": "5d52b15d35c9b39c5303b4609f827c97ea227e3f3c348fc8c415fc39868d6ec3"
+  },
+  {
+    "file": "results/clinical_extension/original_states_with_CI.csv",
+    "bytes": 9365,
+    "sha256": "c90702ce757000f73bdaab67de9b899bd59108a75020f36fdcb1c5dce5441a8a"
+  },
+  {
+    "file": "results/clinical_extension/ridge_minus_original_paired_RD_CI.csv",
+    "bytes": 7637,
+    "sha256": "e1fc1b938739255f5fc03c55054fc319cdfa6b048352a65ca4ac833c1134d49c"
+  },
+  {
+    "file": "results/clinical_extension/stage_cohort_counts.csv",
+    "bytes": 328,
+    "sha256": "ef2292dbcc5474fd21e8bc1a265e98950caa3e558a80bd0e6f27e4f85490a0c9"
+  },
+  {
+    "file": "results/clinical_extension/stage_conditional_RDs_POINT_ONLY.csv",
+    "bytes": 16682,
+    "sha256": "03273e5d4af4596aa9305c4a69d2fc484bc1e3ee06cc820c5f0cad4eedcfe5c5"
+  },
+  {
+    "file": "results/clinical_extension/stage_conditional_states_POINT_ONLY.csv",
+    "bytes": 10777,
+    "sha256": "e95c0507e49767c3da85998a7c75dce05298aa84deb155516d887049d38aedac"
+  },
+  {
+    "file": "results/clinical_extension/stages_RDs_with_CI.csv",
+    "bytes": 18597,
+    "sha256": "8ba4d50b04165313e2886988d4aa162857a6de4c79a6777a0d268dab0e8b7608"
+  },
+  {
+    "file": "results/clinical_extension/stages_age_contrasts_with_CI.csv",
+    "bytes": 11867,
+    "sha256": "637813063558789df155e455746f83a156d33ad072354f50f38321bf965d48b4"
+  },
+  {
+    "file": "results/clinical_extension/stages_states_with_CI.csv",
+    "bytes": 24118,
+    "sha256": "428da395cb62b3cf710eba74b71cb807d68967ff18772034b880caf97477fe69"
+  },
+  {
+    "file": "results/clinical_extension/warnings.csv",
+    "bytes": 97,
+    "sha256": "01b5afed98ae79da589c356a42b42f480a9d0cc0a27618c99c65dc90a0d57681"
+  },
+  {
+    "file": "results/composition_decomposition/composition_model_sensitivity.csv",
+    "bytes": 674,
+    "sha256": "7d7f8626f5ddb3d6e726d18278e7a958ee71e45154824f1601c1c2626a8f3324"
+  },
+  {
+    "file": "results/composition_decomposition/paired_1000/analysis_session_info.txt",
+    "bytes": 575,
+    "sha256": "e93cf8228e1efd747d169a5b29beeed40d198af87c0225ed588a96a5bc21ac34"
+  },
+  {
+    "file": "results/composition_decomposition/paired_1000/bootstrap_estimates.csv",
+    "bytes": 3653793,
+    "sha256": "5c9a04a2efa534ba5df3249fb76e3c0f7d2f157e8557bb52fdef3bf4e68caced"
+  },
+  {
+    "file": "results/composition_decomposition/paired_1000/cohort_counts.csv",
+    "bytes": 308,
+    "sha256": "473fbdd3a85f518b2f5191be2d905fe0a169594cef09e23333e886d1eed6ab96"
+  },
+  {
+    "file": "results/composition_decomposition/paired_1000/estimates_with_ci.csv",
+    "bytes": 7203,
+    "sha256": "5d1486111568aa8ca0be2696825404cb30dc0803a6a004b9543e560b1c5095f0"
+  },
+  {
+    "file": "results/composition_decomposition/paired_1000/final_audit.csv",
+    "bytes": 103,
+    "sha256": "26794dcf39f33bed77b95379ed2c337cf1223674391f526aaa49ca49224be5a1"
+  },
+  {
+    "file": "results/composition_decomposition/paired_1000/independent_audit.json",
+    "bytes": 243,
+    "sha256": "f63de84fe2b96f5db432f6afe753ec9f4cde096efaf795fa5f9f136058265ff4"
+  },
+  {
+    "file": "results/composition_decomposition/paired_1000/noncomposition_ci.csv",
+    "bytes": 337,
+    "sha256": "f798ee2af40125c160bf506f2b71ef2630610c20ce9a1d58b1bae5999f73719f"
+  },
+  {
+    "file": "results/composition_decomposition/paired_1000/paired_bootstrap_differences.csv",
+    "bytes": 3144350,
+    "sha256": "9918fed6ccd0e6b7e4e2001e9cbb584fbd381e0f20c26cd4bdbba9d46e66fbc1"
+  },
+  {
+    "file": "results/composition_decomposition/paired_1000/paired_differences_with_ci.csv",
+    "bytes": 5195,
+    "sha256": "0af4921ba6efe9048133cf44577a9ed338e4a2e8a004d009262ebb8701bc625e"
+  },
+  {
+    "file": "results/composition_decomposition/paired_1000/penalty_sensitivity_points.csv",
+    "bytes": 10963,
+    "sha256": "4de9dcbe881e256e2c466821c0e490575c69ae20afc9b52a0d32cf7587ca1eb4"
+  },
+  {
+    "file": "results/composition_decomposition/paired_1000/prediction_equivalence.csv",
+    "bytes": 1013,
+    "sha256": "98ecd06a804fd60863b0fce5b157d029ee51df8bbd91e1ee2fd4fedb9801571b"
+  },
+  {
+    "file": "results/composition_decomposition/paired_1000/ridge_prediction_equivalence.csv",
+    "bytes": 1013,
+    "sha256": "95927c3c8057a7dbaa36b6d2e8da5fea3aafdb1a2950d1f3cfbc94ba28059460"
+  },
+  {
+    "file": "results/composition_decomposition/paired_1000/warning_resolution_summary.csv",
+    "bytes": 176,
+    "sha256": "4f81e0a00bce33925e5b580cb1903aa24c76466ad87d2540215ee8836dd8ad4e"
+  },
+  {
+    "file": "results/reporting_extensions/age_group_competing_rmtl.csv",
+    "bytes": 438,
+    "sha256": "2465b174fa8ae1fb818d56b6486dfd0370a10bbd53789e5814ca205b2cb2d2bd"
+  },
+  {
+    "file": "results/reporting_extensions/cancer_rmtl_differences.csv",
+    "bytes": 348,
+    "sha256": "f00e58c0290d821934020e4478972ff67a4310b987b92e2b4df53ce3f7a31c47"
+  },
+  {
+    "file": "results/reporting_extensions/competing_risk_curves.csv",
+    "bytes": 31597,
+    "sha256": "2a49fbb46fe5c9eef039ef9dd05c8ddc8174d6ed672787814562147e0406f5d7"
+  },
+  {
+    "file": "results/reporting_extensions/eod_histology8160_tests.csv",
+    "bytes": 152,
+    "sha256": "6df7ad6ce36d8ccf197cff2c3290ff483ec1da3a63c29acdf5b9fd82591a441d"
+  },
+  {
+    "file": "results/reporting_extensions/horizon_anatomy_qc.csv",
+    "bytes": 111,
+    "sha256": "4292a06ea52fc8c9c81b818dc18e197e65ef74bea1b4909f34de5a109772d537"
+  },
+  {
+    "file": "results/reporting_extensions/horizon_standardized_cif.csv",
+    "bytes": 1629,
+    "sha256": "fbd6a03febad03b8ac04782095e3205d3be709c4691d8d629dda212dc706cf08"
+  },
+  {
+    "file": "results/reporting_extensions/horizon_standardized_risk_differences.csv",
+    "bytes": 1485,
+    "sha256": "e5bdb1de8c2528157cc111d620bbab81308c2fc45132fed4d6c8b6410e13f802"
+  },
+  {
+    "file": "results/reporting_extensions/schema3_standardized_cif5.csv",
+    "bytes": 910,
+    "sha256": "7c612718b950dd16efd722e87221fb8491c3acae74deebe2d19ed5cf178b15df"
+  },
+  {
+    "file": "results/reporting_extensions/schema3_standardized_risk_differences.csv",
+    "bytes": 1255,
+    "sha256": "1a4675cb74abf1317df32cfcd8f654c7d7ca65ddbe9bc7617f6bfc99e42ffc74"
+  },
+  {
+    "file": "results/tables/age_site_event_cells.csv",
+    "bytes": 268,
+    "sha256": "f86513afa7ec03496bc187ea5a005714ad720ec8abbc23d21140e591332f9720"
+  },
+  {
+    "file": "results/tables/age_specific_relative_effects.csv",
+    "bytes": 3719,
+    "sha256": "a1fc2eeee6eb5dc128d2829d214106fb5938a5b4decc219fa553392b97e20d11"
+  },
+  {
+    "file": "results/tables/complete_case_model_fit.csv",
+    "bytes": 248,
+    "sha256": "91d42cfda0fda8c102c326503f559b98ed72637cd5ee78360dade9dae5c57725"
+  },
+  {
+    "file": "results/tables/cox_ph_diagnostics.csv",
+    "bytes": 803,
+    "sha256": "826657ef239c9d642bb31c58a06ff389416678fee96c8f9aa24e33ac8c64186d"
+  },
+  {
+    "file": "results/tables/diagnostic_adjusted_cif5.csv",
+    "bytes": 1382,
+    "sha256": "4cf604b8616d58df9dab849983b21d32f7a3f04dd9203223b9ccdf44c8422123"
+  },
+  {
+    "file": "results/tables/diagnostic_adjusted_cif5_risk_differences.csv",
+    "bytes": 1063,
+    "sha256": "e37b5864ff98b372f8fa23cd8602adff45de46b0432c0f3d5160ad98e2ff3fc7"
+  },
+  {
+    "file": "results/tables/diagnostic_age85_counts.csv",
+    "bytes": 189,
+    "sha256": "66286e8e595a4cc5f9b0a723b85bba768d3e7a3841088c578f1f32feab81cf16"
+  },
+  {
+    "file": "results/tables/diagnostic_age85_interaction_tests.csv",
+    "bytes": 479,
+    "sha256": "0636c0289e210f6b4f75b5cffb05e8876b318b3363e493f643806d2823e59d37"
+  },
+  {
+    "file": "results/tables/diagnostic_era_24m_effect_curves.csv",
+    "bytes": 45873,
+    "sha256": "76c43156a6a2ee074f54fd1a2ebab1e486b7f5710831c76fea96dd5454205633"
+  },
+  {
+    "file": "results/tables/diagnostic_era_common_horizon_counts.csv",
+    "bytes": 789,
+    "sha256": "56ce9261203ca550b4ac33851f77ce368812484c29074f23fac171b9a4fe62cc"
+  },
+  {
+    "file": "results/tables/diagnostic_era_threeway_tests.csv",
+    "bytes": 330,
+    "sha256": "101d9032a903f0bc2859dd5d0a6a40a2db68a8791b1cbb2d827c7236ccc5a6e8"
+  },
+  {
+    "file": "results/tables/diagnostic_exact_age_effects.csv",
+    "bytes": 1826,
+    "sha256": "bd097cf1a7d954843a6dee18ef63702ca847e0fdb214527fc98690752611318b"
+  },
+  {
+    "file": "results/tables/diagnostic_histology8160_tests.csv",
+    "bytes": 240,
+    "sha256": "93978983be57fd338401ccf0a42a59544610c6b098419c3ef29a0c4a4fa1204e"
+  },
+  {
+    "file": "results/tables/diagnostic_schema3_counts.csv",
+    "bytes": 319,
+    "sha256": "040abb6c70efa916228c462c607ab59cb6970a0f75438e7f89d3faeeb09198ae"
+  },
+  {
+    "file": "results/tables/diagnostic_schema3_effect_curves.csv",
+    "bytes": 22089,
+    "sha256": "6743361d0bd5941eea210efa0a32a6ed8d0d857ede15f33800f059e9093c5527"
+  },
+  {
+    "file": "results/tables/diagnostic_schema3_interaction_tests.csv",
+    "bytes": 247,
+    "sha256": "fe2c3c240506044bf31ec09ec10e7afb53b568fd71d186c47f978816eb7fe1be"
+  },
+  {
+    "file": "results/tables/diagnostic_schema_crosswalk.csv",
+    "bytes": 218,
+    "sha256": "31445b2dbaf66c355ab7f83ec02e97130de3bf29825d3637d4658669d9d137d5"
+  },
+  {
+    "file": "results/tables/diagnostic_time_varying_effects.csv",
+    "bytes": 5841,
+    "sha256": "9169171ab917b1ecb047bb6cf79c5ba09d1082c6f3b7c730e1364a96ac5c2080"
+  },
+  {
+    "file": "results/tables/diagnostic_time_varying_tests.csv",
+    "bytes": 272,
+    "sha256": "5cc7777d7fa2f32c075b3b326341fbfaa73b1b389336751cc9e33440f8be5f22"
+  },
+  {
+    "file": "results/tables/era_sensitivity.csv",
+    "bytes": 446,
+    "sha256": "b4d028e384fb223c96e5412e7be8849e9a0b62f4304fa20fc68dbb486a8545ec"
+  },
+  {
+    "file": "results/tables/five_year_cif_age_groups.csv",
+    "bytes": 637,
+    "sha256": "3a667590656b186b1cbef60b333509213c5800faf20f20fd1c2305c29936f969"
+  },
+  {
+    "file": "results/tables/five_year_cif_age_specific.csv",
+    "bytes": 404,
+    "sha256": "b23356dfc273ee6dbe389d6bfcec0f42e18bd2d2e58898645ae037012dcd9b51"
+  },
+  {
+    "file": "results/tables/five_year_risk_differences_age_groups.csv",
+    "bytes": 608,
+    "sha256": "fea3399b1d4a76eeb8046b11fa7f010c5d25c634f8924fc8b35b2262f0386344"
+  },
+  {
+    "file": "results/tables/interaction_tests.csv",
+    "bytes": 463,
+    "sha256": "c5f1cf6c6e2038c9ed36752ce1e284b65ad7bbcf2b66327dc1464753a4b8de13"
+  },
+  {
+    "file": "results/tables/nonph_piecewise_vs_ph_risk_differences.csv",
+    "bytes": 983,
+    "sha256": "2f6dfb404e89f7f9c9365b099490a683245320d62603ae951d7bb5815b6dd27b"
+  },
+  {
+    "file": "results/tables/piecewise_followup_effects.csv",
+    "bytes": 1289,
+    "sha256": "05573b237569c639fb713c9b05d524da4981831e223ba1782b7e16e4a35f1c99"
+  },
+  {
+    "file": "results/tables/piecewise_interaction_test.csv",
+    "bytes": 111,
+    "sha256": "48be18d50116249d01689a933bf4f80e6335ade652eaf5c377205510124d1486"
+  },
+  {
+    "file": "results/tables/sensitivity_analyses.csv",
+    "bytes": 597,
+    "sha256": "65a3e7c8f1fe8a1221e3be26058d02a8ad14f6dc8eb58409e5383f8cf221dbb0"
+  },
+  {
+    "file": "results/tables/sensitivity_cif_constant_vs_flexible.csv",
+    "bytes": 1082,
+    "sha256": "f69dacfa80fb01e0d65a9a3616dc77179b5ef88e11bf6029f4c739d8411cd0c6"
+  },
+  {
+    "file": "results/tables/sensitivity_cif_distortion.csv",
+    "bytes": 499,
+    "sha256": "12bade5536d2d2da6e693861331b57f021a355be2903c07471913b710d23b5e9"
+  },
+  {
+    "file": "results/tables/sensitivity_exploratory_fdr.csv",
+    "bytes": 409,
+    "sha256": "677949c16714f887f4f1217f4b234657ba4bcd3af5a6ce26f3bda4ae9a216a15"
+  },
+  {
+    "file": "results/tables/sensitivity_fullperiod_age_counts.csv",
+    "bytes": 427,
+    "sha256": "5b727a3ccb27ac1f2b0d58e3939c88071d83ebddc505c3dd0f48088ab45e1939"
+  },
+  {
+    "file": "results/tables/sensitivity_fullperiod_effects.csv",
+    "bytes": 608,
+    "sha256": "4add9e7c12fd937171ca6149e2f07b065188572ece93c3ecb5a8e0608191f4f0"
+  },
+  {
+    "file": "results/tables/sensitivity_fullperiod_tests.csv",
+    "bytes": 287,
+    "sha256": "900bf81af2a17b804f279c52b066fff55ece1bab8873c8b716163f8b1fdabcc5"
+  },
+  {
+    "file": "results/tables/sensitivity_histology_schema_distribution.csv",
+    "bytes": 739,
+    "sha256": "24e53e47e367e8425f9c48bde6c035291e0409ba9047da9c75f2dc37b5a4d960"
+  },
+  {
+    "file": "results/tables/sensitivity_histology_topography_summary.csv",
+    "bytes": 407,
+    "sha256": "8591f42c6e717fde372d230e18d4edd3d5b5058cf8e71cb91a49793be946900a"
+  },
+  {
+    "file": "results/tables/sensitivity_nonlinearity_binary.csv",
+    "bytes": 524,
+    "sha256": "c5612832bd25fc27d9951307bbe42e3a694e4cb73d48f04320eb558c8c15fe88"
+  },
+  {
+    "file": "results/tables/sensitivity_nonlinearity_schema3.csv",
+    "bytes": 571,
+    "sha256": "5124649ec094ccde71cf971a01ae0de31ca9bd3473dd8428cb77bffaae68d725"
+  },
+  {
+    "file": "results/tables/sensitivity_sequential_adjustment.csv",
+    "bytes": 1310,
+    "sha256": "90e0ad2601424653daf2c3d5e705efa91d286151b95f266ff62264c2a3b5ea3b"
+  },
+  {
+    "file": "results/tables/spline_sensitivity_model_fit.csv",
+    "bytes": 529,
+    "sha256": "73074c376cc7a862f4a6b69e568aecb8e552bdb0a2b3f1aaefdab40ad0131740"
+  },
+  {
+    "file": "results/tables/table1_baseline.csv",
+    "bytes": 2268,
+    "sha256": "3a8f5b4ba4de24db62dd217780b620f7f28b9ca8749e309cb45992d88c87db0f"
+  },
+  {
+    "file": "scripts/00_config.R",
+    "bytes": 1090,
+    "sha256": "88dd27429983b33e550484fc85d8f2562a7966926e8e7e5a1be59559725fdb95"
+  },
+  {
+    "file": "scripts/01_import_qc.R",
+    "bytes": 6404,
+    "sha256": "b475cddec44a85e54254f34ab00bda3aee0fec8bec46f80bb5add25eaf979446"
+  },
+  {
+    "file": "scripts/02_models.R",
+    "bytes": 18165,
+    "sha256": "bd11a54acd0b5da34bd4b59715c5193af20adc423e8e5d76a212da9371f13b58"
+  },
+  {
+    "file": "scripts/03_diagnostics_extended.R",
+    "bytes": 11580,
+    "sha256": "597b1332e643312a3580937cd7205380150c1824a0e195108001c802726e1228"
+  },
+  {
+    "file": "scripts/04_figures.R",
+    "bytes": 12689,
+    "sha256": "194dd421ab4e91cb714364c86faf0101b6d2907d7a217a9c5dcad12da97d7a2a"
+  },
+  {
+    "file": "scripts/05_final_qc.R",
+    "bytes": 8003,
+    "sha256": "1bca0ac4491c7710a61f527e5bc422706a35cd8e1655486f51b9f2f8f52c13d7"
+  },
+  {
+    "file": "scripts/06_absolute_risk_analysis.R",
+    "bytes": 29118,
+    "sha256": "205bdf6adc010ea85e9d4d8224f8c0730a079eeae4429553e6af50442094570f"
+  },
+  {
+    "file": "scripts/07_absolute_risk_figures.R",
+    "bytes": 9470,
+    "sha256": "2f3ac790b2fcfd926a3f4887794f96056d5edbcfe2b01dae00f2520d0d8a3625"
+  },
+  {
+    "file": "scripts/08_sensitivity_analyses.R",
+    "bytes": 22390,
+    "sha256": "575bc9dc5a0e787897903442c1b8ac2b4b3d24b38e3bd16f2b1b85799054de85"
+  },
+  {
+    "file": "scripts/09_competing_risk_summaries.R",
+    "bytes": 6309,
+    "sha256": "87ecbc807ad1f24598e03b90e4f250193f9b44e9b38522889c9594e372df2466"
+  },
+  {
+    "file": "scripts/10_nonproportional_cif_sensitivity.R",
+    "bytes": 7277,
+    "sha256": "7d9748776efd9f1d61040cb7371718fd1faff413d65ba6923fe3d27b27802714"
+  },
+  {
+    "file": "scripts/11_horizon_anatomy_absolute_risks.R",
+    "bytes": 13741,
+    "sha256": "6c5a6735b9c378b36bafbc5e099de48adb6ada6fe5219499eabce292e6eca115"
+  },
+  {
+    "file": "scripts/12_composition_decomposition.R",
+    "bytes": 4359,
+    "sha256": "9444eabf42ab081d641b5fac34efeca1ce4f711420c6e4b9637dd7d9f5d02970"
+  },
+  {
+    "file": "scripts/13_composition_model_sensitivity.R",
+    "bytes": 1525,
+    "sha256": "8b27f3282f892142e3ccb2aa28ba3cfdd53e0cc971286b0a5d856ca965b660e3"
+  },
+  {
+    "file": "scripts/14_bootstrap_warning_diagnosis.R",
+    "bytes": 1376,
+    "sha256": "c59f657f92f495962678085c20b3b89336f3fe1b03a909456e3e7df37238c273"
+  },
+  {
+    "file": "scripts/15_bootstrap_preflight.R",
+    "bytes": 237,
+    "sha256": "a76ab1759f83548e1b9ac275ea2902f82274ac708ebebfd06d5b0966ff772dd2"
+  },
+  {
+    "file": "scripts/16_paired_bootstrap.R",
+    "bytes": 5934,
+    "sha256": "9877c33dd99104627511efd468756c3f86bd0a413679d38f5eb11a6a78360119"
+  },
+  {
+    "file": "scripts/17_warning_mechanism.R",
+    "bytes": 1614,
+    "sha256": "2965c32d3f4af9a746319c5172923e9d5acef1b7001ecd86539e5657f3d8009b"
+  },
+  {
+    "file": "scripts/18_audit_paired_bootstrap.R",
+    "bytes": 3258,
+    "sha256": "4d4ecc98b9ef4a3244574b4c4b8cdd6b30f25df3bee31c4b30a5f0fe7e8aca37"
+  },
+  {
+    "file": "scripts/19_validate_ridge_prediction.R",
+    "bytes": 1705,
+    "sha256": "b87fb053e843456f608514aafe12017cfbb1a074edcadbbe198e4897c2864f47"
+  },
+  {
+    "file": "scripts/20_bootstrap_manifest.R",
+    "bytes": 1810,
+    "sha256": "c2e390bca6f1f77197dec65c82c3d09c8aac9b24047560977d789dfb1eed9c33"
+  },
+  {
+    "file": "scripts/age_risk_contrasts.R",
+    "bytes": 1373,
+    "sha256": "e3dd86554e5dcdf38f03a135e61f0ebe24defbc898413635084ec3b4c59bc089"
+  },
+  {
+    "file": "scripts/audit_clinical_points.R",
+    "bytes": 3082,
+    "sha256": "fce66abc0be6ed7a2e8eb6c206329b95a77fb1fc81c0383c1ed8cef221d296c8"
+  },
+  {
+    "file": "scripts/clinical_auxiliary_bootstrap.R",
+    "bytes": 1804,
+    "sha256": "b12fde79d068a9a10810689491ecde4be9cd6694fe48a7244513f885f4a81feb"
+  },
+  {
+    "file": "scripts/competing_outcomes.R",
+    "bytes": 10292,
+    "sha256": "6e52fd334f70a16b50ac2fbf255b7d0329726f0a6a0e19b95706ba3106782541"
+  },
+  {
+    "file": "scripts/conditional_composition_check.R",
+    "bytes": 2373,
+    "sha256": "86de2c82d97f02f58a13ce592d3fcc3f079815bd670df2f976d0eabd92f8b721"
+  },
+  {
+    "file": "scripts/decomposition_protocol.json",
+    "bytes": 2398,
+    "sha256": "17161d60de07f4252ac1d26bdec19760be648ad4cd40d0c8776ab412ca60a265"
+  },
+  {
+    "file": "scripts/diagnose_clinical_boot_warnings.R",
+    "bytes": 2808,
+    "sha256": "8ce710f075645aff809bbfae044d52ce710ba3b320140ba9d0d1d7f89c9e90de"
+  },
+  {
+    "file": "scripts/figures_cohort_and_definitions.py",
+    "bytes": 5391,
+    "sha256": "564adfe14093a52d57f0018bae25d7653d798b88affa03c1f3a24d45a8751ec9"
+  },
+  {
+    "file": "scripts/figures_competing_outcomes.py",
+    "bytes": 6526,
+    "sha256": "7bcd3b8fbbcf477714607f8798221e3d435407449e88578130f2e0785e82bd3a"
+  },
+  {
+    "file": "scripts/final_clinical_audit.R",
+    "bytes": 1699,
+    "sha256": "a6900e9e13a472bf003e08003b842a307999843d795322a2d9316afebb60e84a"
+  },
+  {
+    "file": "scripts/original_ridge_check.R",
+    "bytes": 1154,
+    "sha256": "58843d3b18aeb74082b17edd5acc9a2b33f8b49c174982871cd0db4b2431a667"
+  },
+  {
+    "file": "scripts/paired_bootstrap_protocol.json",
+    "bytes": 2260,
+    "sha256": "c8a0df583a9b979b207fc65c160aeb00deed1df7e9dbfda31f4d04e627aa7807"
+  },
+  {
+    "file": "scripts/summarize_competing_outcomes.R",
+    "bytes": 4621,
+    "sha256": "46ee52651aad357aff1dd4d600d28de9d6b71138fb7b29d9c1f34316cbc62bd0"
+  },
+  {
+    "file": "scripts/summarize_original_ridge.R",
+    "bytes": 1498,
+    "sha256": "4796030b8f497043dbcf48cc4ec3a8ac0badc504e9ad14141d35a97a98953c1b"
+  }
+]

@@ -1,0 +1,2 @@
+status,replicates,rows,warnings,errors,max_additivity_error
+PASS,1000,78000,0,0,2.22044604925031e-16

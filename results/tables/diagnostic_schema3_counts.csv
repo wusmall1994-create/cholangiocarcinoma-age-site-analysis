@@ -1,0 +1,10 @@
+schema3,age_group_exact,n,cancer_deaths,other_deaths
+iCCA,40-64,5662,4084,329
+iCCA,65-84,9039,6466,892
+Perihilar eCCA,65-84,2240,1449,527
+Distal eCCA,65-84,1691,958,408
+Perihilar eCCA,40-64,1218,849,178
+Perihilar eCCA,15-39,68,44,9
+Distal eCCA,40-64,805,495,123
+iCCA,15-39,343,240,8
+Distal eCCA,15-39,31,15,1

@@ -1,0 +1,5 @@
+age85_flag,site_group,n,cancer_deaths,other_deaths,unknown_cause_deaths
+15-84,iCCA,17494,12715,1461,204
+15-84,eCCA,8220,5349,1684,110
+85+,eCCA,1262,835,367,6
+85+,iCCA,1678,1350,209,11

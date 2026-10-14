@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "replicates": 1000,
+  "estimate_rows": 78000,
+  "paired_rows": 48000,
+  "maximum_additivity_error": 1.0130785099704553e-15,
+  "independent_percentile_check": true,
+  "all_paired_differences_recomputed": true
+}

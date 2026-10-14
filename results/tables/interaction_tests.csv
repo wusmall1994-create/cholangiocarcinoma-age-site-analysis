@@ -1,0 +1,7 @@
+outcome,model,chisq,df,p
+Cancer-specific hazard,Model 1,38.4846593162511,4,8.90067418781028e-08
+Cancer-specific hazard,Model 2,42.7404710869305,4,1.17137293007335e-08
+Overall mortality,Model 1,20.7993199001066,4,0.000347037947904845
+Overall mortality,Model 2,30.9668554465752,4,3.10942658210962e-06
+Cancer death subdistribution,Unadjusted,71.5684794663684,4,1.05867809962708e-14
+Cancer death subdistribution,Model 1,75.5833006250905,4,1.49979901286316e-15

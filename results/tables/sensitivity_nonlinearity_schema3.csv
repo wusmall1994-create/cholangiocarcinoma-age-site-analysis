@@ -1,0 +1,5 @@
+analysis,test,n,cancer_deaths,chisq,df,p,model
+"Three-category EOD anatomy, 2010-2023",Overall age-by-site interaction,21097,14600,16.6587875271216,8,0.0338648445633934,Model 1
+"Three-category EOD anatomy, 2010-2023",Nonlinear interaction component,21097,14600,12.2904298852664,6,0.0557945755553059,Model 1
+"Three-category EOD anatomy, 2010-2023",Overall age-by-site interaction,21097,14600,19.6052165424917,8,0.0119374293519943,Model 2
+"Three-category EOD anatomy, 2010-2023",Nonlinear interaction component,21097,14600,15.913672268478,6,0.0142249004427136,Model 2

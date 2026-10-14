@@ -1,0 +1,3 @@
+analysis,model,n,cancer_deaths,chisq,df,p
+EOD schema 2010-2023; cystic duct excluded,Model 1,21097,14600,16.6587875271216,8,0.0338648445633934
+EOD schema 2010-2023; cystic duct excluded,Model 2,21097,14600,19.6052165424917,8,0.0119374293519943

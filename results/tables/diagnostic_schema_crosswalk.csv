@@ -1,0 +1,5 @@
+site_group,eod_schema,tnm_schema,N
+iCCA,Bile Ducts Intrahepat,BileDuctsIntraHepat,16620
+eCCA,Bile Duct Distal,BileDuctsDistal,2946
+eCCA,Bile Ducts Perihilar,BileDuctsPerihilar,4085
+eCCA,Cystic Duct,CysticDuct,145

@@ -1,79 +1,52 @@
-# Age-related heterogeneity in anatomical-site mortality contrasts in cholangiocarcinoma
+# Cholangiocarcinoma age and anatomical-site prognosis
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22693117.svg)](https://doi.org/10.5281/zenodo.22693117)
+Analysis code and non-identifiable aggregate results for **Age-related anatomical-site differences in cholangiocarcinoma prognosis: cancer-death, competing mortality, and all-cause risk**.
 
-This repository contains the R code used for a population-based analysis of age-dependent cancer-specific mortality contrasts between intrahepatic and extrahepatic cholangiocarcinoma and, where EOD schema coding is available, among intrahepatic, perihilar, and distal cholangiocarcinoma.
+The repository presents the analysis specifications used in the manuscript. It contains no raw or derived patient records, identifiers, fitted patient-level model objects, or manuscript drafts. SEER data require registration and a data-use agreement; obtain them from https://seer.cancer.gov/data/.
 
-## Repository scope
+## Analysis structure
 
-The repository includes statistical analysis code and selected non-identifiable aggregate result files documenting key model checks and sensitivity analyses. It does not contain SEER records, derived patient-level data, model objects, manuscripts, submission files, credentials, or personal information.
+| Analysis | Diagnosis window | Target and estimator | Principal outputs |
+| --- | --- | --- | --- |
+| Primary age-by-site hypothesis | 2004–2023 | 25,400 records; unpenalized cause-specific Cox model | Relative effects and interaction tests |
+| Primary standardized outcomes | 2004–2018 | 15,578 records; own empirical target; joint unpenalized cause-specific models | Cancer death, other death, survival and all-cause death; Table 2, Figure 2, Tables S11, S13 and S24 |
+| Harmonized definitions | 2010–2018 | Six fitting definitions; common 11,361-record EOD target; ridge theta=0.1 | Tables 3–4, Figure 3, Tables S19–S21 |
+| Paired model and stage checks | 2010–2018 | PH versus interval-specific models; separate targets within each stage | Tables S25–S27 and Figure S4 |
 
-## Data access
+Risk differences are eCCA minus iCCA. All-cause death equals cancer death plus other death within the cause-known cohort. Synthetic mixtures and their decomposition are descriptive and are not causal mediation or an exact decomposition of a separately fitted binary model. Point-only checks are not interval estimates.
 
-The analysis uses the Incidence - SEER Research Data, 17 Registries, November 2025 submission (2000-2023), linked to time-dependent county income and rurality attributes. SEER data are subject to registration and a data-use agreement and cannot be redistributed by this repository. Researchers must obtain the corresponding database directly from the US National Cancer Institute SEER Program and create a case-listing export with the variables required by `01_import_qc.R`.
+## Reproduction
 
-The default input filename is `CCA_SEER17_2000_2023_raw.csv`. Store it outside version control and provide its path with the `CCA_INPUT_CSV` environment variable.
+Use an existing R installation (analysis environment: R 4.6.1) and the packages recorded in `results/clinical_extension/R_SESSION_INFO.txt`. Python with matplotlib is needed for publication figures. No dependency installation is run automatically.
 
-## Software
+From `scripts/`, set absolute paths for `CCA_PROJECT_DIR`, `CCA_INPUT_CSV`, `CCA_DERIVED_DIR` and `CCA_RESULTS_DIR`. The input is the authorized SEER 17 November 2025 submission (2000–2023) export; required fields and transformations are explicit in `01_import_qc.R`. Use a separate, empty local results directory, never the distributed aggregate-results directory.
 
-- R 4.6.1
-- data.table
-- survival 3.8-6
-- cmprsk 2.2-12
-- ggplot2
-- patchwork
-- scales
-- ragg
-- svglite
+1. Run `01_import_qc.R`, `02_models.R`, `03_diagnostics_extended.R`, `06_absolute_risk_analysis.R`, `08_sensitivity_analyses.R`, `09_competing_risk_summaries.R`, `10_nonproportional_cif_sensitivity.R`, and `11_horizon_anatomy_absolute_risks.R` for the primary and specified sensitivity analyses. Inspect the scripts' environment options before long bootstrap jobs.
+2. For the six-definition analysis, run `16_paired_bootstrap.R` with `CCA_BOOT_MODE=preflight`, then `CCA_BOOT_MODE=run`, `CCA_PAIRED_B=1000`, `CCA_WORKERS=1`, and `CCA_WORKER=1`. Run `18_audit_paired_bootstrap.R` with `CCA_AUDIT_MODE=final` and `19_validate_ridge_prediction.R`.
+3. Set `CCA_CLINICAL_SCRIPTS_DIR` to the absolute scripts directory, `CCA_CLINICAL_OUT` to a separate empty output directory, and `CCA_AGGREGATE_RESULTS` to the distributed results directory. Run `competing_outcomes.R` with `CCA_CLINICAL_MODE=point`, then `descriptive`, then `bootstrap` with `CCA_CLINICAL_B=1000`. Run `clinical_auxiliary_bootstrap.R`, `original_ridge_check.R`, `conditional_composition_check.R`, `summarize_competing_outcomes.R`, `summarize_original_ridge.R`, and `age_risk_contrasts.R`.
+4. Run `audit_clinical_points.R`, `diagnose_clinical_boot_warnings.R`, and `final_clinical_audit.R`. Numerical warnings are retained and audited, not silently excluded. Scripts 12–15, 17 and 20 support decomposition specification and numerical diagnostics; they do not replace the final paired intervals.
 
-Install missing packages with:
+Resume requires identical data, model, code, seed and worker settings. Multiple workers require distinct indices and the same worker count for a stream. Do not redistribute locally generated RDS files.
 
-```r
-Rscript install_dependencies.R
+## Figures from distributed aggregates
+
+From the repository root:
+
+```text
+python scripts/figures_cohort_and_definitions.py --results results --out figures
+python scripts/figures_competing_outcomes.py --clinical results/clinical_extension --results results --out figures
 ```
 
-## Configuration
+The first command generates Figures 1 and 3; the second generates Figure 2 and Supplementary Figures S3 and S4. Outputs are 600-dpi TIFF. The primary R figure scripts support the other supplementary panels. Lines connect displayed ages, and intervals are pointwise rather than simultaneous.
 
-Run the code from the repository root. Paths can be set through environment variables:
+## Aggregate sources and uncertainty
 
-- `CCA_INPUT_CSV`: SEER case-listing CSV
-- `CCA_DERIVED_DIR`: private directory for derived patient-level files
-- `CCA_RESULTS_DIR`: private directory for tables, models, and figures
-- `CCA_BOOTSTRAP_B`: number of patient-cluster bootstrap replicates; default `1000`
-- `CCA_ENHANCEMENT_BOOTSTRAP_B`: paired bootstrap replicates for comparing constant-effect and age-interaction absolute-risk models; default `1000`
-- `CCA_RMTL_BOOTSTRAP_B`: patient-cluster bootstrap replicates for five-year cancer-death restricted mean time lost; default `1000`
+`results/clinical_extension/original_*_with_CI.csv` supplies the primary competing outcomes; `original_age65_age75_contrasts_with_CI.csv` supplies paired age contrasts. `results/composition_decomposition/paired_1000/estimates_with_ci.csv`, `paired_differences_with_ci.csv` and `noncomposition_ci.csv` supply the harmonized definition analysis. The PH/interval paired comparison uses `interval_minus_PH_paired_CI.csv`; do not subtract marginal CI endpoints.
 
-Example in PowerShell:
+All reported probabilities and differences in these files are in probability units unless a column explicitly states percentages or percentage points. Multiply by 100 for manuscript risk percentages and percentage-point RDs. `lower95`/`upper95` denote percentile 95% limits; replicate-level files contain aggregate estimates, not patient records.
 
-```powershell
-$env:CCA_INPUT_CSV = "D:/restricted-data/CCA_SEER17_2000_2023_raw.csv"
-$env:CCA_DERIVED_DIR = "D:/restricted-data/derived"
-$env:CCA_RESULTS_DIR = "D:/restricted-data/results"
-Rscript run_all.R
-```
+The six-definition stream uses seed 202610110+b, the PH/interval and stage stream 202610140+b, and the primary competing-outcome/ridge stream 202610150+b, with 1,000 patient-cluster samples each. Different streams can yield slightly different marginal intervals for identical point specifications. All-cause and age contrasts use within-replicate sums/differences. The original unpenalized outcome stream retained 677 warning-bearing samples among 1,000, predominantly sparse zero-event other-death categories. The paired ridge comparison changed evaluated RDs by at most 0.86 percentage points. See `FINAL_NUMERICAL_AUDIT.csv` and the diagnostic aggregates for limits of this check.
 
-## Analysis sequence
+## Access and citation
 
-1. `01_import_qc.R`: imports the SEER export, harmonizes variables, defines cohorts, and performs selection checks.
-2. `02_models.R`: fits primary cause-specific and overall-survival models together with unadjusted and demographically adjusted Fine-Gray competing-risk models.
-3. `03_diagnostics_extended.R`: produces continuous curves, proportional-hazards diagnostics, and complementary absolute-risk estimates.
-4. `04_figures.R`: generates the main figures from analysis outputs.
-5. `06_prepublication_analyses.R`: evaluates age top-coding, diagnosis-era interaction, detailed anatomy, adjusted cumulative incidence, and time-varying effects.
-6. `08_manuscript_enhancements.R`: formally tests nonlinear interaction components, evaluates the 2000-2023 period, reports sequential adjustment and histology-schema coding, quantifies the absolute-risk distortion caused by imposing a constant site effect, and applies Benjamini-Hochberg correction to the defined exploratory interaction family.
-7. `09_reporting_extensions.R`: evaluates the histology-8160-only EOD analysis, unadjusted other-cause cumulative incidence, descriptive five-year cancer-death restricted mean time lost, and additive-scale contrasts between standardized age-specific risk differences.
-8. `07_prepublication_figures.R`: generates figures for the extended analyses, including the enhancement analyses.
-9. `05_final_qc.R`: checks expected cohort counts, statistical outputs, figures, and script syntax.
-
-`run_all.R` executes these scripts in dependency order. All generated files remain in the private directories specified above and are excluded by `.gitignore`.
-
-## Reproducibility note
-
-The standardized cumulative-incidence workflow, constant-effect comparison, and RMTL analysis use 1000 patient-cluster bootstrap replicates by default. Their random seeds are fixed. Smaller values may be used only for local smoke tests; publication estimates require the defaults.
-
-## Licence
-
-The analysis code is released under the MIT License. The licence does not apply to SEER data or override SEER data-use conditions.
-
-## Citation
-
-Wu X, Wei H, Qiu J, Liang H. Statistical analysis code for age-specific prognostic contrasts in cholangiocarcinoma. Version 1.1.1. Zenodo. 2026. https://doi.org/10.5281/zenodo.22693117
+Code uses the existing MIT license. This license does not grant rights to SEER patient data. Cite the repository URL and exact commit used. `MANIFEST.json` provides SHA-256 checksums of the distributed files. The repository and accompanying Supplementary Data 1 contain the same final analysis files. A GitHub update is not a new Zenodo deposit; no DOI for this exact code snapshot is claimed.

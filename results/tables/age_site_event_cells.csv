@@ -1,0 +1,7 @@
+age_group,site_group,n,cancer_deaths,other_deaths,unknown_cause_deaths,alive
+40-64,iCCA,6645,4860,405,84,1296
+40-64,eCCA,2763,1910,409,24,420
+65+,iCCA,12105,8907,1255,123,1820
+65+,eCCA,6593,4196,1629,91,677
+15-39,eCCA,126,78,13,1,34
+15-39,iCCA,422,298,10,8,106

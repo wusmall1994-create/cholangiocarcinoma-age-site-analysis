@@ -1,0 +1,37 @@
+{
+  "primary_question": "How much of the age-75 minus age-50 anatomical-site cancer-death risk contrast is attributable descriptively to extrahepatic subtype composition?",
+  "population": "2010-2018 diagnosed, exact ages 15-84, known cause classification, histology 8160 or 8162",
+  "anatomy": "EOD recode intrahepatic, perihilar, distal; exclude cystic duct and unclassified records for decomposition",
+  "target": "Empirical covariate distribution of the eligible EOD three-category cohort",
+  "primary_horizon_months": 60,
+  "secondary_horizons_months": [
+    12,
+    36
+  ],
+  "ages": [
+    50,
+    75
+  ],
+  "composition_model": "Logistic regression of distal versus perihilar on the original age spline; marginal age-specific composition",
+  "estimand": "Marginal composition-weighted standardized subtype cancer-death risks minus standardized iCCA risk",
+  "decomposition": "Symmetric Kitagawa allocation into composition, perihilar risk, distal risk and iCCA reference-risk components",
+  "bootstrap": "Patient-cluster resampling, complete refitting of both cause-specific models and composition model, restandardization over resampled target",
+  "publication_replicates_required": 1000,
+  "definition_scenarios": {
+    "D1": "Original topography, histology 8160/8162",
+    "D2": "Exclude C22.1 with 8162",
+    "D3": "Restrict to 8160",
+    "D4": "Assign 8162 to extrahepatic in binary comparison; assumed reallocation, not verified correction",
+    "EOD": "Three-category schema; separate estimand rather than a nested fifth definition"
+  },
+  "interpretation_constraints": [
+    "The decomposition total is not the earlier 2004-2018 binary-model -7.2 percentage-point contrast",
+    "Marginal weights multiplied by separately standardized risks define a descriptive synthetic mixture; this is not a causal mediation analysis",
+    "EOD schema is not independent pathological validation of topography",
+    "D1-D4 are alternative case-definition scenarios, not a fully nested ladder",
+    "Case-based cumulative incidence is not a population mortality rate",
+    "Do not select specifications or continue analyses on the basis of statistical significance",
+    "Do not interpret bootstrap component percentages when the total contrast approaches or crosses zero",
+    "Definition differences require paired bootstrap inference before claims of equivalence or meaningful sensitivity"
+  ]
+}

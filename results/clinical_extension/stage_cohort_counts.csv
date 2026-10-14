@@ -1,0 +1,10 @@
+schema3,N,cancer,other,stage
+Perihilar eCCA,290,174,96,Localized
+iCCA,1881,1278,253,Localized
+Distal eCCA,216,126,69,Localized
+iCCA,2060,1756,153,Regional
+Perihilar eCCA,839,573,193,Regional
+Distal eCCA,555,350,145,Regional
+iCCA,3061,2787,193,Distant
+Perihilar eCCA,1015,818,174,Distant
+Distal eCCA,428,349,72,Distant

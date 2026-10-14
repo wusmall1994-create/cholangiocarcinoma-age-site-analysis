@@ -1,0 +1,8 @@
+replicate,event,term,coefficient,category_records,category_events,message
+1,other_event,income3Unknown,-11.1874902639042,3,0,Loglik converged before variable  17 ; coefficient may be infinite. 
+8,other_event,race_factorNon-Hispanic Unknown Race,-12.0054312248451,11,0,Loglik converged before variable  11 ; coefficient may be infinite. 
+19,other_event,race_factorNon-Hispanic Unknown Race,-12.8228331023284,18,0,"Loglik converged before variable  11,17 ; coefficient may be infinite. "
+19,other_event,income3Unknown,-12.9229968656005,1,0,"Loglik converged before variable  11,17 ; coefficient may be infinite. "
+104,other_event,rural3Unknown,-12.6698694692473,16,0,Loglik converged before variable  19 ; coefficient may be infinite. 
+965,other_event,"splines::ns(age_years, knots = c(52, 68, 80), Boundary.knots = c(15, 84))1:site_groupeCCA",0.0569247246491874,0,0,"Loglik converged before variable  22,24 ; coefficient may be infinite. "
+965,other_event,"splines::ns(age_years, knots = c(52, 68, 80), Boundary.knots = c(15, 84))3:site_groupeCCA",-0.00244708107951813,0,0,"Loglik converged before variable  22,24 ; coefficient may be infinite. "

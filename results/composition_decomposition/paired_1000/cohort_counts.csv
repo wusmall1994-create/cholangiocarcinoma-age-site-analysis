@@ -1,0 +1,7 @@
+analysis,N,patients,patients_multiple_rows,cancer_events,other_events
+D1_topography,11400,11386,14,8994,1553
+D2_exclude_discordant,11235,11222,13,8858,1533
+D3_8160_only,10918,10905,13,8633,1461
+D4_reallocate_8162,11400,11386,14,8994,1553
+EOD,11361,11347,14,8965,1546
+EOD_8160,10882,10869,13,8606,1454

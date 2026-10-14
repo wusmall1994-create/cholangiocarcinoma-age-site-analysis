@@ -1,0 +1,9 @@
+topography,histology,eod_anatomy,N,percent_within_topography_histology
+C22.1 (intrahepatic bile duct),8160: cholangiocarcinoma,Intrahepatic,16336,100
+C22.1 (intrahepatic bile duct),8162: Klatskin tumor,Intrahepatic,284,100
+C24.0 (extrahepatic bile duct),8160: cholangiocarcinoma,Perihilar,3659,54.6608903495668
+C24.0 (extrahepatic bile duct),8160: cholangiocarcinoma,Distal,2897,43.2775619958172
+C24.0 (extrahepatic bile duct),8160: cholangiocarcinoma,Cystic duct,138,2.06154765461607
+C24.0 (extrahepatic bile duct),8162: Klatskin tumor,Perihilar,426,88.3817427385892
+C24.0 (extrahepatic bile duct),8162: Klatskin tumor,Distal,49,10.1659751037344
+C24.0 (extrahepatic bile duct),8162: Klatskin tumor,Cystic duct,7,1.45228215767635

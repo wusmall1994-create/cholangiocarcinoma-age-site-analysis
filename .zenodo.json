@@ -1,7 +1,11 @@
 {
-  "title": "Statistical analysis code for age-specific prognostic contrasts in cholangiocarcinoma",
-  "description": "R code and non-identifiable aggregate result files for a population-based analysis of age-related heterogeneity in cancer-specific mortality contrasts between intrahepatic and extrahepatic cholangiocarcinoma and, where EOD schema coding is available, among intrahepatic, perihilar, and distal cholangiocarcinoma. The repository contains no SEER records, derived patient-level data, or manuscript files.",
+  "title": "Statistical analysis of age-related anatomical-site prognosis in cholangiocarcinoma",
+  "description": "Analysis code and non-identifiable aggregate results for age-specific cancer-death, other-death, and all-cause risk comparisons in cholangiocarcinoma. Includes standardized risk estimation, case-definition comparisons, descriptive subtype decomposition, patient-cluster bootstrap, and numerical diagnostics. No patient records, fitted patient-level model objects, or manuscript files are included.",
   "creators": [
+    {
+      "name": "Liang, Huadong",
+      "affiliation": "Department of Gastroenterology, Longyan First Affiliated Hospital of Fujian Medical University, Longyan, Fujian, China"
+    },
     {
       "name": "Wu, Xiaoxin",
       "affiliation": "Department of Pathology, Longyan First Affiliated Hospital of Fujian Medical University, Longyan, Fujian, China"
@@ -13,10 +17,6 @@
     {
       "name": "Qiu, Jianting",
       "affiliation": "Department of Gastroenterology, The Second Hospital of Longyan, Longyan, Fujian, China"
-    },
-    {
-      "name": "Liang, Huadong",
-      "affiliation": "Department of Gastroenterology, Longyan First Affiliated Hospital of Fujian Medical University, Longyan, Fujian, China"
     }
   ],
   "keywords": [
@@ -25,10 +25,11 @@
     "survival analysis",
     "competing risks",
     "age-related heterogeneity",
+    "standardized absolute risk",
+    "constant site effect",
     "R"
   ],
   "license": "MIT",
   "upload_type": "software",
-  "access_right": "open",
-  "version": "1.2.1"
+  "access_right": "open"
 }
