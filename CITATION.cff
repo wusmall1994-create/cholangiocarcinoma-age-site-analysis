@@ -1,5 +1,8 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite this repository and the exact commit used."
+message: "Please cite version v1.3.1 and its version-specific Zenodo archive record."
+version: "v1.3.1"
+date-released: "2026-10-15"
+doi: "10.5281/zenodo.22277317"
 title: "Statistical analysis of age-related anatomical-site prognosis in cholangiocarcinoma"
 type: software
 authors:

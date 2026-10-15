@@ -1,0 +1,6 @@
+cohort,N,patients,all_deaths,alive,cancer_deaths,other_deaths,reverse_KM_q25,reverse_KM_median,reverse_KM_q75,observed_q25,observed_median,observed_q75,max_observed
+descriptive_2004_2023,28654,28605,24301,4353,20249,3721,30,72,125,2,6,17,237
+cause_known_all_age_2004_2023,28323,28274,23970,4353,20249,3721,30,71,125,2,6,17,237
+primary_hazard_2004_2023,25400,25353,21209,4191,18064,3145,30,71,125,2,7,18,237
+primary_risk_2004_2018,15578,15561,14579,999,12378,2201,82,114,159,2,7,20,237
+harmonized_EOD_2010_2018,11361,11347,10511,850,8965,1546,77,100,128,2,8,22,167

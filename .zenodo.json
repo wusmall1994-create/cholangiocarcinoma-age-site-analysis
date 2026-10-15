@@ -1,6 +1,6 @@
 {
   "title": "Statistical analysis of age-related anatomical-site prognosis in cholangiocarcinoma",
-  "description": "Analysis code and non-identifiable aggregate results for age-specific cancer-death, other-death, and all-cause risk comparisons in cholangiocarcinoma. Includes standardized risk estimation, case-definition comparisons, descriptive subtype decomposition, patient-cluster bootstrap, and numerical diagnostics. No patient records, fitted patient-level model objects, or manuscript files are included.",
+  "description": "Analysis code and non-identifiable aggregate results for age-specific cancer-death, other-death, and all-cause risk comparisons in cholangiocarcinoma. Includes standardized risk estimation, case-definition comparisons, descriptive subtype decomposition, patient-cluster bootstrap, numerical diagnostics, and cohort-specific reverse Kaplan-Meier potential follow-up summaries. No patient records, fitted patient-level model objects, or manuscript files are included.",
   "creators": [
     {
       "name": "Liang, Huadong",
@@ -31,5 +31,6 @@
   ],
   "license": "MIT",
   "upload_type": "software",
-  "access_right": "open"
+  "access_right": "open",
+  "version": "v1.3.1"
 }

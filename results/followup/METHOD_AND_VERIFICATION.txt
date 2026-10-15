@@ -1,0 +1,9 @@
+Unit: tumor record, matching analysis cohorts; no patient-first-record deduplication.
+Full recorded survival months; zero recorded months assigned 0.5 by import.
+Reverse KM: all-cause deaths censored; alive/last-contact observations are events.
+No truncation at 60 months: follow-up availability differs from the prediction horizon.
+Independent product-limit calculation reproduced every survival::survfit quartile.
+All time summaries are in months. q25 and q75 bound the interquartile range.
+observed_* are empirical recorded-time quantiles (type 2), not reverse-KM estimates.
+N and patients are aggregate counts; cancer/other deaths omit unknown cause.
+No patient-level data or fitted model exported.

@@ -11,13 +11,13 @@
   },
   {
     "file": ".zenodo.json",
-    "bytes": 1498,
-    "sha256": "1117913f726d850d79f2296e72df5781d9ba17131b1870d65f8216236aa643f2"
+    "bytes": 1626,
+    "sha256": "5ea2498e4bce2b05c193ee5e0f48b2b980af4a2188d2b12a642a85167eb43d2f"
   },
   {
     "file": "CITATION.cff",
-    "bytes": 1311,
-    "sha256": "fd24a955861134842c35e027acfdc0dc0d56ae9e109ffeecb379d4758fae1dd4"
+    "bytes": 1382,
+    "sha256": "ec08f5d99e482bd3534514b7c7979e4e683e0a5631a19c8ba1ba56f8dfe264c6"
   },
   {
     "file": "LICENSE",
@@ -26,8 +26,8 @@
   },
   {
     "file": "README.md",
-    "bytes": 6493,
-    "sha256": "15531190efd95bf3ddcdd798be584e3f668b844d0c474184dacb9560e7c8dfe4"
+    "bytes": 7007,
+    "sha256": "320ca44d96f25272a31f2b62e74ca0f8c825243bbb74cc238261098fbf610d60"
   },
   {
     "file": "results/clinical_extension/FINAL_NUMERICAL_AUDIT.csv",
@@ -303,6 +303,21 @@
     "file": "results/composition_decomposition/paired_1000/warning_resolution_summary.csv",
     "bytes": 176,
     "sha256": "4f81e0a00bce33925e5b580cb1903aa24c76466ad87d2540215ee8836dd8ad4e"
+  },
+  {
+    "file": "results/followup/METHOD_AND_VERIFICATION.txt",
+    "bytes": 712,
+    "sha256": "2bb1d56dab9c2f1432e6d7da8d4797646be005f2bad8330b643f60f7ee0603e5"
+  },
+  {
+    "file": "results/followup/R_SESSION_INFO.txt",
+    "bytes": 560,
+    "sha256": "52ca7a6ca96f944986fdf9c66d3dd625c282668c19d3f4451d77ddb5f4e4076e"
+  },
+  {
+    "file": "results/followup/followup_by_cohort.csv",
+    "bytes": 570,
+    "sha256": "d915e34c6d0e1ffc6c38db6c5b6aad8bc9553008a53566d32ecaa925bcfa7738"
   },
   {
     "file": "results/reporting_extensions/age_group_competing_rmtl.csv",
@@ -658,6 +673,11 @@
     "file": "scripts/20_bootstrap_manifest.R",
     "bytes": 1810,
     "sha256": "c2e390bca6f1f77197dec65c82c3d09c8aac9b24047560977d789dfb1eed9c33"
+  },
+  {
+    "file": "scripts/21_followup_summary.R",
+    "bytes": 3978,
+    "sha256": "8104b3afcb1d8f99c3e5f7f9c6755dbf7370fbe263c549276e22f5c95be56f22"
   },
   {
     "file": "scripts/age_risk_contrasts.R",
