@@ -1,0 +1,16 @@
+{
+  "backend": "Python matplotlib; matplotlib",
+  "format": "TIFF only, 600 dpi, LZW; internal previews TIFF",
+  "Fig2": {
+    "claim": "A recorded death can be assigned differently by endpoint rules while remaining an all-cause event.",
+    "archetype": "classification schematic",
+    "evidence": "Official rules plus observed 621-record crosswalk; arrows describe classification only",
+    "risk": "No causal diagram, error adjudication, or diagnostic gold standard"
+  },
+  "Fig3": {
+    "claim": "Age-specific site contrasts are sensitive to endpoints; sequence strata have distinct targets.",
+    "archetype": "quantitative grid",
+    "uncertainty": "Pointwise percentile 95% CIs, fixed theta=.1, 2000 paired patient-cluster samples in unified G",
+    "risk": "Both common endpoints shown; different x scales explicitly labeled; no between-stratum causal decomposition"
+  }
+}

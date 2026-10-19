@@ -1,0 +1,15 @@
+definition,state,contrast,lower_MCSE_pp,upper_MCSE_pp
+Common_biliary,cancer,RD_age75,0.124140155902559,0.109962111218904
+Common_hepatobiliary,cancer,RD_age75,0.0790318230005011,0.0666009182351256
+SEER_original,cancer,RD_age75,0.0919116266462624,0.0932714543008273
+Common_biliary,cancer,RD_change_75_minus_50,0.107597637904822,0.226582917669536
+Common_hepatobiliary,cancer,RD_change_75_minus_50,0.0950953668164264,0.118243280107846
+SEER_original,cancer,RD_change_75_minus_50,0.0899463332111999,0.133746387950713
+Common_biliary_minus_SEER,cancer,RD_age75,0.0930768240017244,0.0770395659245568
+Common_biliary_minus_SEER,cancer,RD_change_75_minus_50,0.117664784360798,0.142820037441617
+Common_hepatobiliary_minus_SEER,cancer,RD_age75,0.0792646169034034,0.0593425959024621
+Common_hepatobiliary_minus_SEER,cancer,RD_change_75_minus_50,0.127279697664963,0.115441976505109
+Scenario621,cancer,RD_age75,0.0767660593393677,0.0676511031010974
+Scenario621,cancer,RD_change_75_minus_50,0.115228415587903,0.0960678078610204
+Scenario621_minus_SEER,cancer,RD_age75,0.0701465616880058,0.0520332138018979
+Scenario621_minus_SEER,cancer,RD_change_75_minus_50,0.0677494738499857,0.0599467513459869

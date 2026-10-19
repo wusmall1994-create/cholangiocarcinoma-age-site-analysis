@@ -1,3 +1,4 @@
+# Supplementary analysis plots. For manuscript Figures 1–3 use draw_figures.py.
 """Quantitative grids: competing-outcome distinction and exploratory model sensitivity.
 Uses aggregate estimates only. TIFF output, 600 dpi; pointwise intervals.
 Usage: python figures_competing_outcomes.py --clinical results/clinical_extension --results results --out figures

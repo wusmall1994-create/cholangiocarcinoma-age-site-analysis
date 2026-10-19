@@ -11,13 +11,13 @@
   },
   {
     "file": ".zenodo.json",
-    "bytes": 1626,
-    "sha256": "5ea2498e4bce2b05c193ee5e0f48b2b980af4a2188d2b12a642a85167eb43d2f"
+    "bytes": 1608,
+    "sha256": "9b3e7e31c99d1e326eb8e5bbed3b9a308e64f725ee4e9e49e9b83221ac86d864"
   },
   {
     "file": "CITATION.cff",
-    "bytes": 1382,
-    "sha256": "ec08f5d99e482bd3534514b7c7979e4e683e0a5631a19c8ba1ba56f8dfe264c6"
+    "bytes": 1357,
+    "sha256": "0436186e87f7931699fb89e7c7374b6f389e971d9d0fec98539a67cbb5a07f2d"
   },
   {
     "file": "LICENSE",
@@ -26,8 +26,28 @@
   },
   {
     "file": "README.md",
-    "bytes": 7007,
-    "sha256": "320ca44d96f25272a31f2b62e74ca0f8c825243bbb74cc238261098fbf610d60"
+    "bytes": 10960,
+    "sha256": "60a41fba9d7cc522a8e33960a1a9c8ffdc724a8b1a2b03753b672a23ae2649be"
+  },
+  {
+    "file": "results/allcause_eligibility/allcause_contrasts_with_CI.csv",
+    "bytes": 12218,
+    "sha256": "78ab93c7cd7ab1aca7bf8be10ba14efb7d3d3b3a927613a1d7c4fe3f40ee8737"
+  },
+  {
+    "file": "results/allcause_eligibility/allcause_key_results_percentage_points.csv",
+    "bytes": 2833,
+    "sha256": "f65b74e5c9cab5c5e767c1e8a87465242b7c291d7fbc2adefbc835a6b1155700"
+  },
+  {
+    "file": "results/allcause_eligibility/allcause_point_contrasts.csv",
+    "bytes": 5505,
+    "sha256": "82f35e81f3c270ea2c90f7d69c316f2760e9924765e09c909be9eb72e107c9ad"
+  },
+  {
+    "file": "results/allcause_eligibility/bootstrap_diagnostics_FINAL.csv",
+    "bytes": 28957,
+    "sha256": "ca59fc4759b30532ec0d48e13a1b26a5b019d763272e7f2a2539cc7fdea366dd"
   },
   {
     "file": "results/clinical_extension/FINAL_NUMERICAL_AUDIT.csv",
@@ -305,6 +325,101 @@
     "sha256": "4f81e0a00bce33925e5b580cb1903aa24c76466ad87d2540215ee8836dd8ad4e"
   },
   {
+    "file": "results/endpoint_sensitivity/Fig3_source.csv",
+    "bytes": 1892,
+    "sha256": "3ab953df14acbfb1ee5a4d044a8e3a83d263d0b6e86f11401f765bbf473a9dc4"
+  },
+  {
+    "file": "results/endpoint_sensitivity/Table1_source.json",
+    "bytes": 3337,
+    "sha256": "8591b9c4391fff8bdbce4fa1ac560855a8ab711b079ae60aba60b0da0f9368a1"
+  },
+  {
+    "file": "results/endpoint_sensitivity/age_counts.csv",
+    "bytes": 188,
+    "sha256": "93784488c7a872d2a4bf1335a1d17b5440add886fe12a888cc9b73a03b160fe1"
+  },
+  {
+    "file": "results/endpoint_sensitivity/age_summary.csv",
+    "bytes": 64,
+    "sha256": "a321c3ca7ea449b7c42857532b6a1e3fac142e21e69768161029d5d2d100c8de"
+  },
+  {
+    "file": "results/endpoint_sensitivity/aggregate_bootstrap_contrasts.csv.gz",
+    "bytes": 11027275,
+    "sha256": "380b35c4c6453554d6c38eebf4e7ee59e9ffe17fcb7d018143dc8bd0fe626392"
+  },
+  {
+    "file": "results/endpoint_sensitivity/alternative_penalty_point_checks.csv",
+    "bytes": 104780,
+    "sha256": "0672c60d0cd5dd5164f8d06d439f7403ce582d58ca1cae5d6fd0e4fd2c718978"
+  },
+  {
+    "file": "results/endpoint_sensitivity/baseline_counts.csv",
+    "bytes": 3844,
+    "sha256": "bfd57443932a80d76fc04bb04d63735ca8097746474d8ae96c43764f1d6e9a16"
+  },
+  {
+    "file": "results/endpoint_sensitivity/bidirectional_transitions_by_age.csv",
+    "bytes": 33558,
+    "sha256": "1edc820b05f06c33348270dc068e9b7a6a665a16bb6c3208e804acb2bc915dd4"
+  },
+  {
+    "file": "results/endpoint_sensitivity/bootstrap_diagnostics.csv",
+    "bytes": 70733,
+    "sha256": "89d07b5b1ab0f6232cbe77c5177a96fd54dbe248bc0346b6032f7a92e027f357"
+  },
+  {
+    "file": "results/endpoint_sensitivity/figure_contract.json",
+    "bytes": 881,
+    "sha256": "74fa65616e99fa2922c1b0f534c294f45ac05e0d2a4692b8b1ced7c29aa4b413"
+  },
+  {
+    "file": "results/endpoint_sensitivity/half_sample_interval_stability.csv",
+    "bytes": 2513,
+    "sha256": "3ac95c79b9f60d9dd93250fd98ce475008a12d470564848b290e36711fa991d0"
+  },
+  {
+    "file": "results/endpoint_sensitivity/independent_bootstrap_QA.json",
+    "bytes": 363,
+    "sha256": "e0d8612aeb0a9729e45cc92d0849123882147f2cd59dec376eaf026be3bc63e2"
+  },
+  {
+    "file": "results/endpoint_sensitivity/independent_prediction_QA.csv",
+    "bytes": 3816,
+    "sha256": "8a403d6c0fb4624bc1f868cc77276d0b272cb2702328b3cc0b308c40f391136b"
+  },
+  {
+    "file": "results/endpoint_sensitivity/key_results_percentage_points.csv",
+    "bytes": 6180,
+    "sha256": "f86048e8f716825ff7e24036282637e604cf5bc2fe5545785b1ac90288e53313"
+  },
+  {
+    "file": "results/endpoint_sensitivity/quantile_MCSE.csv",
+    "bytes": 1176,
+    "sha256": "4db7c7584968e370f3ec3d22a2bb51db95b993f3022c05c073e9dc1ebf8e0463"
+  },
+  {
+    "file": "results/endpoint_sensitivity/ridge_contrasts_with_CI.csv",
+    "bytes": 52643,
+    "sha256": "625192e67c13c3f95a3218d7fd2092ca7722b0bf4a8740167cead109a1c289c8"
+  },
+  {
+    "file": "results/endpoint_sensitivity/ridge_point_contrasts.csv",
+    "bytes": 33324,
+    "sha256": "1c3720283fc0a930845899d7188c078cf4011e2d69676ca7984b615331e95c38"
+  },
+  {
+    "file": "results/endpoint_sensitivity/scenario621_audit.csv",
+    "bytes": 135,
+    "sha256": "6958a111c71c2b7e6256a5f2007daf7b672f9ced1e5ca25245fb29eddbdfbd12"
+  },
+  {
+    "file": "results/endpoint_sensitivity/sessionInfo.txt",
+    "bytes": 530,
+    "sha256": "99bcb7053c7b006383659beb2a25700c874ff074a03d85479ee775eb4c7036ed"
+  },
+  {
     "file": "results/followup/METHOD_AND_VERIFICATION.txt",
     "bytes": 712,
     "sha256": "2bb1d56dab9c2f1432e6d7da8d4797646be005f2bad8330b643f60f7ee0603e5"
@@ -373,6 +488,11 @@
     "file": "results/tables/age_specific_relative_effects.csv",
     "bytes": 3719,
     "sha256": "a1fc2eeee6eb5dc128d2829d214106fb5938a5b4decc219fa553392b97e20d11"
+  },
+  {
+    "file": "results/tables/broad_cohort_baseline.csv",
+    "bytes": 2223,
+    "sha256": "1d0f5fc03109d0c5b7cf6d9964cb7ef23e6c215c56c2cd7543a646bba1ebe9d6"
   },
   {
     "file": "results/tables/complete_case_model_fit.csv",
@@ -685,9 +805,24 @@
     "sha256": "e3dd86554e5dcdf38f03a135e61f0ebe24defbc898413635084ec3b4c59bc089"
   },
   {
+    "file": "scripts/allcause_eligibility.R",
+    "bytes": 5020,
+    "sha256": "b69ed7580953a214a6c4385c053bda382f35b443894df481c7de489e449bf861"
+  },
+  {
+    "file": "scripts/audit_bootstrap.py",
+    "bytes": 2170,
+    "sha256": "4478025f1715b1878df037c8aa4e303a100314c6f065126746e2190093c9b897"
+  },
+  {
     "file": "scripts/audit_clinical_points.R",
     "bytes": 3082,
     "sha256": "fce66abc0be6ed7a2e8eb6c206329b95a77fb1fc81c0383c1ed8cef221d296c8"
+  },
+  {
+    "file": "scripts/check_predictions_and_penalties.R",
+    "bytes": 1718,
+    "sha256": "685bc13bc3eba29a25ee6e7ae50e163da7be9da032489702914c753ceda4da3a"
   },
   {
     "file": "scripts/clinical_auxiliary_bootstrap.R",
@@ -705,6 +840,11 @@
     "sha256": "86de2c82d97f02f58a13ce592d3fcc3f079815bd670df2f976d0eabd92f8b721"
   },
   {
+    "file": "scripts/core_baseline.R",
+    "bytes": 826,
+    "sha256": "c8deb7b20dea8f23d1e2d68fe4d1dbd09b9859f3b074b41602dc081fd1c6f3bb"
+  },
+  {
     "file": "scripts/decomposition_protocol.json",
     "bytes": 2398,
     "sha256": "17161d60de07f4252ac1d26bdec19760be648ad4cd40d0c8776ab412ca60a265"
@@ -715,19 +855,29 @@
     "sha256": "8ce710f075645aff809bbfae044d52ce710ba3b320140ba9d0d1d7f89c9e90de"
   },
   {
+    "file": "scripts/draw_figures.py",
+    "bytes": 7627,
+    "sha256": "24bab4c24a04f3deacca3473c71f3d1b38fb10aa66a82ed07e5e9baeaf3a9b2f"
+  },
+  {
     "file": "scripts/figures_cohort_and_definitions.py",
-    "bytes": 5391,
-    "sha256": "564adfe14093a52d57f0018bae25d7653d798b88affa03c1f3a24d45a8751ec9"
+    "bytes": 5473,
+    "sha256": "59257e84a2fdcdef6fc98b49e7846c7e3ed93dbe461834b06f217556c5fb4f7e"
   },
   {
     "file": "scripts/figures_competing_outcomes.py",
-    "bytes": 6526,
-    "sha256": "7bcd3b8fbbcf477714607f8798221e3d435407449e88578130f2e0785e82bd3a"
+    "bytes": 6608,
+    "sha256": "65cf03663691f44b90d863300859d2755b9bebccf5a4c40831f7800606f9df1c"
   },
   {
     "file": "scripts/final_clinical_audit.R",
     "bytes": 1699,
     "sha256": "a6900e9e13a472bf003e08003b842a307999843d795322a2d9316afebb60e84a"
+  },
+  {
+    "file": "scripts/format_core_baseline.py",
+    "bytes": 2973,
+    "sha256": "743d9f84ea63bcd43c22514ac74bdfabbcdb12cf1f4f3ea4bf668a78e863d7e0"
   },
   {
     "file": "scripts/original_ridge_check.R",
@@ -740,6 +890,16 @@
     "sha256": "c8a0df583a9b979b207fc65c160aeb00deed1df7e9dbfda31f4d04e627aa7807"
   },
   {
+    "file": "scripts/run_unified_ridge.R",
+    "bytes": 23504,
+    "sha256": "d32a2dcc9bdf5ec059fa79cbbb6d9aa028764340a4abecdf3d9f739e1c3774d4"
+  },
+  {
+    "file": "scripts/summarize_allcause_eligibility.R",
+    "bytes": 1377,
+    "sha256": "2cd77d307c73dd16d888181cb82fb23f548b6aff8aee0829d6b2ab204ff3e185"
+  },
+  {
     "file": "scripts/summarize_competing_outcomes.R",
     "bytes": 4621,
     "sha256": "46ee52651aad357aff1dd4d600d28de9d6b71138fb7b29d9c1f34316cbc62bd0"
@@ -748,5 +908,10 @@
     "file": "scripts/summarize_original_ridge.R",
     "bytes": 1498,
     "sha256": "4796030b8f497043dbcf48cc4ec3a8ac0badc504e9ad14141d35a97a98953c1b"
+  },
+  {
+    "file": "scripts/summarize_unified_ridge.R",
+    "bytes": 3393,
+    "sha256": "767cf3322eaadee31b024b21964bcfd6c0939aea8ac808734635429d10e71435"
   }
 ]

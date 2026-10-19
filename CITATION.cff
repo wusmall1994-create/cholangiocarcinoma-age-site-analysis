@@ -1,9 +1,7 @@
 cff-version: 1.2.0
-message: "Please cite version v1.3.1 and its version-specific Zenodo archive record."
-version: "v1.3.1"
-date-released: "2026-10-15"
-doi: "10.5281/zenodo.22277317"
-title: "Statistical analysis of age-related anatomical-site prognosis in cholangiocarcinoma"
+message: "Please cite this software using the repository URL and commit identifier."
+date-released: "2026-10-20"
+title: "Sensitivity of age-specific cholangiocarcinoma prognosis comparisons to death endpoints and primary sequence"
 type: software
 authors:
   - family-names: Liang

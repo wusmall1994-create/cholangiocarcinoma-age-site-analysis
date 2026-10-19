@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "replicates": 2000,
+  "contrasts_per_replicate": 447,
+  "CI_endpoints_checked": 894,
+  "max_CI_error": 9.992007221626409e-16,
+  "identities_checked": 720000,
+  "max_identity_error": 1.2385925618474403e-15,
+  "method": "Independent Python CSV parsing, manual type-7 interpolation; paired endpoint, age and complementary-state identities"
+}

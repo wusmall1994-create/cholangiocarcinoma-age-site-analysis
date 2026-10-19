@@ -1,0 +1,100 @@
+site,level,n,variable
+eCCA,Male,3224,sex_factor
+iCCA,Female,4737,sex_factor
+iCCA,Male,5105,sex_factor
+eCCA,Female,2512,sex_factor
+eCCA,Non-Hispanic Asian or Pacific Islander,814,race_factor
+iCCA,Non-Hispanic White,6203,race_factor
+iCCA,Non-Hispanic Asian or Pacific Islander,1238,race_factor
+eCCA,Non-Hispanic White,3456,race_factor
+iCCA,Hispanic (All Races),1536,race_factor
+iCCA,Non-Hispanic Black,762,race_factor
+eCCA,Non-Hispanic Black,482,race_factor
+eCCA,Hispanic (All Races),921,race_factor
+iCCA,Non-Hispanic American Indian/Alaska Native,88,race_factor
+eCCA,Non-Hispanic American Indian/Alaska Native,59,race_factor
+iCCA,Non-Hispanic Unknown Race,15,race_factor
+eCCA,Non-Hispanic Unknown Race,4,race_factor
+eCCA,Married,3367,marital4
+iCCA,Married,5807,marital4
+iCCA,Widowed,1161,marital4
+iCCA,Unmarried,2520,marital4
+iCCA,Unknown,354,marital4
+eCCA,Unmarried,1344,marital4
+eCCA,Widowed,806,marital4
+eCCA,Unknown,219,marital4
+eCCA,">=100,000",1399,income3
+iCCA,">=100,000",2593,income3
+iCCA,"70,000-99,999",5005,income3
+eCCA,"70,000-99,999",3043,income3
+iCCA,"<70,000",2243,income3
+eCCA,"<70,000",1294,income3
+iCCA,Unknown,1,income3
+eCCA,Metropolitan,5137,rural3
+iCCA,Metropolitan,8794,rural3
+eCCA,Nonmetropolitan,582,rural3
+iCCA,Nonmetropolitan,1037,rural3
+iCCA,Unknown,11,rural3
+eCCA,Unknown,17,rural3
+eCCA,2004-2009,1932,era4
+iCCA,2004-2009,2246,era4
+iCCA,2010-2015,4258,era4
+iCCA,2016-2019,3338,era4
+eCCA,2010-2015,2500,era4
+eCCA,2016-2019,1304,era4
+eCCA,Distant,2081,stage4
+iCCA,Distant,3746,stage4
+iCCA,Regional,2742,stage4
+eCCA,Localized,793,stage4
+iCCA,Localized,2462,stage4
+eCCA,Unknown,733,stage4
+eCCA,Regional,2129,stage4
+iCCA,Unknown,892,stage4
+eCCA,Unknown,3958,grade4
+iCCA,Unknown,6259,grade4
+iCCA,I,412,grade4
+iCCA,II,1672,grade4
+eCCA,III,765,grade4
+iCCA,III,1499,grade4
+eCCA,I,238,grade4
+eCCA,II,775,grade4
+eCCA,No,4333,surgery_primary
+iCCA,No,7638,surgery_primary
+iCCA,Yes,2107,surgery_primary
+eCCA,Yes,1365,surgery_primary
+iCCA,Unknown,97,surgery_primary
+eCCA,Unknown,38,surgery_primary
+eCCA,Beam radiation,958,Radiation recode
+iCCA,None/Unknown,8390,Radiation recode
+eCCA,None/Unknown,4556,Radiation recode
+iCCA,Beam radiation,987,Radiation recode
+iCCA,Radioisotopes (1988+),172,Radiation recode
+eCCA,Refused (1988+),85,Radiation recode
+iCCA,"Recommended, unknown if administered",62,Radiation recode
+eCCA,"Recommended, unknown if administered",60,Radiation recode
+iCCA,Radioactive implants (includes brachytherapy) (1988+),117,Radiation recode
+eCCA,"Radiation, NOS  method or source not specified",19,Radiation recode
+iCCA,Refused (1988+),63,Radiation recode
+iCCA,"Radiation, NOS  method or source not specified",25,Radiation recode
+eCCA,Combination of beam with implants or isotopes,23,Radiation recode
+iCCA,Combination of beam with implants or isotopes,26,Radiation recode
+eCCA,Radioisotopes (1988+),12,Radiation recode
+eCCA,Radioactive implants (includes brachytherapy) (1988+),23,Radiation recode
+eCCA,Yes,2502,"Chemotherapy recode (yes, no/unk)"
+iCCA,Yes,4941,"Chemotherapy recode (yes, no/unk)"
+iCCA,No/Unknown,4901,"Chemotherapy recode (yes, no/unk)"
+eCCA,No/Unknown,3234,"Chemotherapy recode (yes, no/unk)"
+eCCA,2nd of 2 or more primaries,821,Sequence number
+iCCA,2nd of 2 or more primaries,1485,Sequence number
+eCCA,3rd of 3 or more primaries,138,Sequence number
+iCCA,3rd of 3 or more primaries,291,Sequence number
+iCCA,One primary only,7668,Sequence number
+iCCA,5th of 5 or more primaries,8,Sequence number
+eCCA,One primary only,4554,Sequence number
+iCCA,4th of 4 or more primaries,63,Sequence number
+eCCA,1st of 2 or more primaries,188,Sequence number
+iCCA,1st of 2 or more primaries,324,Sequence number
+eCCA,4th of 4 or more primaries,29,Sequence number
+iCCA,10th of 10 or more primaries,1,Sequence number
+eCCA,5th of 5 or more primaries,6,Sequence number
+iCCA,6th of 6 or more primaries,2,Sequence number

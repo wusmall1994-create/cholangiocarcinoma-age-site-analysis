@@ -1,3 +1,4 @@
+# Supplementary analysis plots. For manuscript Figures 1–3 use draw_figures.py.
 """Redraw main figures from existing aggregate estimates only; no model fitting.
 
 Run: python cancer_medicine_figures.py --results RESULTS --out OUTPUT

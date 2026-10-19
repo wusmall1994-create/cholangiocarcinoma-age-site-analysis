@@ -1,53 +1,92 @@
-# Cholangiocarcinoma age and anatomical-site prognosis
+# Cholangiocarcinoma prognosis across death endpoints and primary sequence
 
-Analysis code and non-identifiable aggregate results for **Age-related anatomical-site differences in cholangiocarcinoma prognosis: cancer-death, competing mortality, and all-cause risk**.
+Analysis code and aggregate results for **Sensitivity of age-specific cholangiocarcinoma prognosis comparisons to death endpoints and primary sequence**.
 
-The repository presents the analysis specifications used in the manuscript. It contains no raw or derived patient records, identifiers, fitted patient-level model objects, or manuscript drafts. SEER data require registration and a data-use agreement; obtain them from https://seer.cancer.gov/data/.
+The study compares age-specific extrahepatic versus intrahepatic cholangiocarcinoma prognosis under SEER attribution, common biliary and common hepatobiliary death definitions, registry-recorded primary-sequence restrictions, and direct all-cause mortality. Individual-level SEER records, identifiers and fitted patient-level models are not distributed. Data access requires an authorized SEER export and data-use agreement: https://seer.cancer.gov/data/.
 
-## Analysis structure
+## Analysis populations and estimands
 
-| Analysis | Diagnosis window | Target and estimator | Principal outputs |
+| Analysis | Diagnoses | Records / patients | Specification |
 | --- | --- | --- | --- |
-| Primary age-by-site hypothesis | 2004–2023 | 25,400 records; unpenalized cause-specific Cox model | Relative effects and interaction tests |
-| Primary standardized outcomes | 2004–2018 | 15,578 records; own empirical target; joint unpenalized cause-specific models | Cancer death, other death, survival and all-cause death; Table 2, Figure 2, Tables S11, S13 and S24 |
-| Harmonized definitions | 2010–2018 | Six fitting definitions; common 11,361-record EOD target; ridge theta=0.1 | Tables 3–4, Figure 3, Tables S19–S21 |
-| Paired model and stage checks | 2010–2018 | PH versus interval-specific models; separate targets within each stage | Tables S25–S27 and Figure S4 |
+| Primary age-by-site hazard hypothesis | 2004–2023 | 25,400 / 25,353 | Unpenalized cause-specific Cox interaction test |
+| Endpoint and primary-sequence sensitivity | 2004–2018, ages 15–84, known cause classification | 15,578 / 15,561 | Fixed-ridge competing-risk models; shared target within each population |
+| Registry-recorded single primary | Same risk eligibility | 12,222 / 12,222 | Stratum-specific empirical target |
+| Multiple-primary sequence | Same risk eligibility | 3,356 / 3,339 | Stratum-specific empirical target |
+| Direct all-cause mortality | Same risk eligibility including unknown-cause deaths | 15,780 / 15,763 | Direct fixed-ridge all-cause Cox model |
+| Anatomical supplementary analysis | 2010–2018, EOD classifiable | 11,361 records | Common EOD target and paired anatomical definitions |
 
-Risk differences are eCCA minus iCCA. All-cause death equals cancer death plus other death within the cause-known cohort. Synthetic mixtures and their decomposition are descriptive and are not causal mediation or an exact decomposition of a separately fitted binary model. Point-only checks are not interval estimates.
+Risk differences (RDs) are eCCA minus iCCA; the age contrast is RD75 minus RD50. Common biliary death comprises COD-to-site categories 21072 and 21090; the hepatobiliary set adds 21071 and 21080. These sets are applied identically across anatomical sites and change the estimand. They are not adjudicated causes of death. Complementary deaths include cancers outside the selected endpoint.
 
-## Reproduction
+The primary hypothesis is the 2004–2023 age-by-site hazard interaction. Endpoint, sequence, directed-reclassification and anatomical analyses are exploratory. Sequence restrictions change the population and target. The 621-record scenario changes endpoint membership while retaining records, follow-up, covariates and target; it is a classification sensitivity analysis, not bias correction. Direct all-cause mortality avoids cause allocation; intervals spanning zero do not establish equivalence.
 
-Use an existing R installation (analysis environment: R 4.6.1) and the packages recorded in `results/clinical_extension/R_SESSION_INFO.txt`. Python with matplotlib is needed for publication figures. No dependency installation is run automatically.
+## Software and input preparation
 
-From `scripts/`, set absolute paths for `CCA_PROJECT_DIR`, `CCA_INPUT_CSV`, `CCA_DERIVED_DIR` and `CCA_RESULTS_DIR`. The input is the authorized SEER 17 November 2025 submission (2000–2023) export; required fields and transformations are explicit in `01_import_qc.R`. Use a separate, empty local results directory, never the distributed aggregate-results directory.
+Use an existing R installation with `data.table`, `survival`, `splines`, `cmprsk` and the plotting packages referenced by the supplementary scripts. The analysis environment is recorded in `results/endpoint_sensitivity/sessionInfo.txt`. Python figure generation requires matplotlib and Pillow. No installation command is run automatically.
 
-1. Run `01_import_qc.R`, `02_models.R`, `03_diagnostics_extended.R`, `06_absolute_risk_analysis.R`, `08_sensitivity_analyses.R`, `09_competing_risk_summaries.R`, `10_nonproportional_cif_sensitivity.R`, and `11_horizon_anatomy_absolute_risks.R` for the primary and specified sensitivity analyses. Inspect the scripts' environment options before long bootstrap jobs.
-2. For the six-definition analysis, run `16_paired_bootstrap.R` with `CCA_BOOT_MODE=preflight`, then `CCA_BOOT_MODE=run`, `CCA_PAIRED_B=1000`, `CCA_WORKERS=1`, and `CCA_WORKER=1`. Run `18_audit_paired_bootstrap.R` with `CCA_AUDIT_MODE=final` and `19_validate_ridge_prediction.R`.
-3. Set `CCA_CLINICAL_SCRIPTS_DIR` to the absolute scripts directory, `CCA_CLINICAL_OUT` to a separate empty output directory, and `CCA_AGGREGATE_RESULTS` to the distributed results directory. Run `competing_outcomes.R` with `CCA_CLINICAL_MODE=point`, then `descriptive`, then `bootstrap` with `CCA_CLINICAL_B=1000`. Run `clinical_auxiliary_bootstrap.R`, `original_ridge_check.R`, `conditional_composition_check.R`, `summarize_competing_outcomes.R`, `summarize_original_ridge.R`, and `age_risk_contrasts.R`.
-4. Run `audit_clinical_points.R`, `diagnose_clinical_boot_warnings.R`, and `final_clinical_audit.R`. Numerical warnings are retained and audited, not silently excluded. Scripts 12–15, 17 and 20 support decomposition specification and numerical diagnostics; they do not replace the final paired intervals.
-5. With `CCA_DERIVED_DIR` and `CCA_RESULTS_DIR` set, run `21_followup_summary.R` for cohort-specific potential follow-up. `results/followup/` supplies the aggregate summaries, method definitions and R session information. Reverse Kaplan–Meier estimation censors all-cause deaths and treats alive/last-contact observations as events. It uses full recorded times rather than truncating at the five-year prediction horizon; observed-time quantiles are reported separately.
+From `scripts/`, set these environment variables to absolute paths:
 
-Resume requires identical data, model, code, seed and worker settings. Multiple workers require distinct indices and the same worker count for a stream. Do not redistribute locally generated RDS files.
+| Variable | Content |
+| --- | --- |
+| `CCA_PROJECT_DIR` | Local project directory |
+| `CCA_INPUT_CSV` | Authorized SEER 17 November 2025 export, 2000–2023; required columns are explicit in `01_import_qc.R` |
+| `CCA_DERIVED_DIR` | Local directory for derived patient-level objects |
+| `CCA_RESULTS_DIR` | Writable local output directory, separate from the distributed `results/` directory |
+| `CCA_COD_CSV` | Matched export with `COD to site recode` and `COD to site recode ICD-O-3 2023 Revision Expanded (1999+)` |
+| `CCA_ANALYSIS_CODE_DIR` | Absolute path to `scripts/` |
 
-## Figures from distributed aggregates
+Run `Rscript 01_import_qc.R`. This produces `cca_strict_hazard_2004_2023.rds` and `cca_strict_cif5_2004_2018.rds`. Keep the covariates from this input fixed when matching the COD export by patient identifier and record number. The COD export adds endpoint fields; it does not replace the covariate source. Both input exports must have compatible record keys. All patient-level data and generated RDS files remain local.
 
-From the repository root:
+## Endpoint and sequence analysis
+
+1. Set `CCA_ENDPOINT_MODE=point` and run `Rscript run_unified_ridge.R`.
+2. Run `Rscript core_baseline.R` and `python format_core_baseline.py` for the 15,578-record baseline summaries and formatted Table 1.
+3. Set `CCA_ENDPOINT_MODE=bootstrap`, `CCA_ENDPOINT_B=2000`, `CCA_ENDPOINT_WORKERS=1`, and `CCA_ENDPOINT_WORKER=1`, then run `Rscript run_unified_ridge.R`.
+4. Run `Rscript summarize_unified_ridge.R`.
+5. Run `python audit_bootstrap.py` and `Rscript check_predictions_and_penalties.R`.
+
+For parallel processing, launch N processes with the same `CCA_ENDPOINT_WORKERS=N` and distinct `CCA_ENDPOINT_WORKER=1,…,N`. Each sample uses seed `202610192+b`. Do not change data, code, seeds or worker settings when resuming completed samples. Existing replicate files are reused; select a fresh output directory for a different specification.
+
+Patient clusters are sampled from the expanded 15,780-record cohort. Cause-known eligibility and sequence restrictions are reapplied within each sample. Every endpoint, sequence restriction, directed scenario and direct all-cause analysis shares the patient draw. Endpoint definitions within a population share the same resampled target; sequence strata have separate targets. Joint cause-specific hazard integration produces cancer death, complementary death and survival probabilities.
+
+Ridge theta is fixed at 0.1 on all unscaled design columns, including spline/site interaction columns (`scale=FALSE`, Efron ties, `eps=1e-11`, `iter.max=100`). There is no cross-validation or outcome-based tuning. Alternative theta values 0.01 and 1 are point checks only. The bootstrap refits the fixed specification and computes percentile pointwise 95% intervals (R type-7 quantiles). Paired endpoint and age differences are calculated within each sample; marginal interval endpoints must not be subtracted. All 2,000 distributed samples completed without fitting warnings or failures.
+
+## Distributed results and manuscript mapping
+
+`results/endpoint_sensitivity/` contains the final core estimates and reproducibility summaries:
+
+| Manuscript element | Aggregate source |
+| --- | --- |
+| Table 1, core risk-cohort baseline | `Table1_source.json`, `baseline_counts.csv`, `age_summary.csv`, `age_counts.csv` |
+| Tables 2–3; endpoint and sequence estimates; Tables S34–S36 | `ridge_contrasts_with_CI.csv` |
+| Figure 3 | `ridge_contrasts_with_CI.csv`; `scripts/draw_figures.py` |
+| Bidirectional classification crosswalk and age composition | `bidirectional_transitions_by_age.csv` |
+| 621-record directed scenario | `scenario621_audit.csv` and the Scenario621 rows in the core contrast table |
+| Numerical diagnostics | `bootstrap_diagnostics.csv`, `independent_prediction_QA.csv`, `alternative_penalty_point_checks.csv`, `quantile_MCSE.csv`, `half_sample_interval_stability.csv` |
+| Complete paired replicate estimates | `aggregate_bootstrap_contrasts.csv.gz` |
+| Table S38, broad-cohort baseline | `results/tables/broad_cohort_baseline.csv` |
+
+The replicate matrix has 2,000 samples × 447 contrasts and contains model estimates only. It is gzip-compressed; `audit_bootstrap.py` reads it directly. Local summarization produces an uncompressed CSV. Estimates are probabilities unless the field explicitly says percentage points; multiply by 100 for manuscript risk percentages and RDs. The numeric labels in the single-primary panels of Figure 3 use the same canonical estimates and intervals.
+
+To reproduce the main figures from distributed aggregates, set `CCA_RESULTS_DIR` to the absolute `results/endpoint_sensitivity` directory and `CCA_FIGURE_OUTPUT_DIR` to a separate writable output directory, then run:
 
 ```text
-python scripts/figures_cohort_and_definitions.py --results results --out figures
-python scripts/figures_competing_outcomes.py --clinical results/clinical_extension --results results --out figures
+python scripts/draw_figures.py
 ```
 
-The first command generates Figures 1 and 3; the second generates Figure 2 and Supplementary Figures S3 and S4. Outputs are 600-dpi TIFF. The primary R figure scripts support the other supplementary panels. Lines connect displayed ages, and intervals are pointwise rather than simultaneous.
+The three outputs are 600-dpi LZW-compressed TIFF files. Figure 1 cohort counts and Figure 2 classification rules are fixed study annotations; Figure 3 reads the distributed contrast table. Arrows in Figure 2 represent classification paths, not causal mechanisms.
 
-## Aggregate sources and uncertainty
+## Supplementary analyses
 
-`results/clinical_extension/original_*_with_CI.csv` supplies the primary competing outcomes; `original_age65_age75_contrasts_with_CI.csv` supplies paired age contrasts. `results/composition_decomposition/paired_1000/estimates_with_ci.csv`, `paired_differences_with_ci.csv` and `noncomposition_ci.csv` supply the harmonized definition analysis. The PH/interval paired comparison uses `interval_minus_PH_paired_CI.csv`; do not subtract marginal CI endpoints.
+The numbered scripts implement import, the primary hazard test, spline and model diagnostics, competing-risk summaries, horizons, EOD case definitions, descriptive anatomical decomposition and cohort-specific potential follow-up. From `scripts/`, use `02_models.R`, `03_diagnostics_extended.R`, `06_absolute_risk_analysis.R`, `08_sensitivity_analyses.R`, `09_competing_risk_summaries.R`, `10_nonproportional_cif_sensitivity.R` and `11_horizon_anatomy_absolute_risks.R` for these analyses. `04_figures.R` and `07_absolute_risk_figures.R` support supplementary plotting.
 
-All reported probabilities and differences in these files are in probability units unless a column explicitly states percentages or percentage points. Multiply by 100 for manuscript risk percentages and percentage-point RDs. `lower95`/`upper95` denote percentile 95% limits; replicate-level files contain aggregate estimates, not patient records.
+For paired anatomical definitions, use `16_paired_bootstrap.R` (`CCA_BOOT_MODE=preflight`, then `run`; `CCA_PAIRED_B=1000`, `CCA_WORKERS=1`, `CCA_WORKER=1`), followed by `18_audit_paired_bootstrap.R` (`CCA_AUDIT_MODE=final`) and `19_validate_ridge_prediction.R`. The composition and diagnostics scripts 12–15, 17 and 20 support this specification. `results/composition_decomposition/paired_1000/` contains its paired estimates and audits.
 
-The six-definition stream uses seed 202610110+b, the PH/interval and stage stream 202610140+b, and the primary competing-outcome/ridge stream 202610150+b, with 1,000 patient-cluster samples each. Different streams can yield slightly different marginal intervals for identical point specifications. All-cause and age contrasts use within-replicate sums/differences. The original unpenalized outcome stream retained 677 warning-bearing samples among 1,000, predominantly sparse zero-event other-death categories. The paired ridge comparison changed evaluated RDs by at most 0.86 percentage points. See `FINAL_NUMERICAL_AUDIT.csv` and the diagnostic aggregates for limits of this check.
+For supplementary unpenalized competing outcomes and PH/interval/stage comparisons, set `CCA_CLINICAL_SCRIPTS_DIR` to `scripts/`, `CCA_CLINICAL_OUT` to a separate writable directory, and `CCA_AGGREGATE_RESULTS` to the distributed `results/`. Run `competing_outcomes.R` with `CCA_CLINICAL_MODE=point`, `descriptive`, then `bootstrap` (`CCA_CLINICAL_B=1000`); run `clinical_auxiliary_bootstrap.R`, `original_ridge_check.R`, `conditional_composition_check.R`, `summarize_competing_outcomes.R`, `summarize_original_ridge.R`, `age_risk_contrasts.R`, and the clinical audit scripts. Their outputs are in `results/clinical_extension/`. Filenames containing `original` identify the unpenalized SEER-endpoint comparator, not the main fixed-ridge estimates. Numerical warnings and point-only sensitivity checks are retained as scientific diagnostics.
 
-## Access and citation
+The separate all-cause eligibility comparison in Table S36 uses a different model/target question and bootstrap stream. Set `CCA_ALLCAUSE_RESULTS_DIR` to a separate output directory; run `allcause_eligibility.R` with `CCA_ALLCAUSE_MODE=point`, then `bootstrap` (`CCA_ALLCAUSE_B=1000`, `CCA_WORKERS=1`, `CCA_WORKER=1`), followed by `summarize_allcause_eligibility.R`. Its distributed contrasts are in `results/allcause_eligibility/`. Do not pool these estimates with the main ridge stream.
 
-Code uses the existing MIT license. This license does not grant rights to SEER patient data. Cite release v1.3.1 and its version-specific Zenodo DOI from the release's archive record. The persistent record for the version series is https://doi.org/10.5281/zenodo.22277317. `MANIFEST.json` provides SHA-256 checksums of the distributed files. The repository release and accompanying Supplementary Data 1 contain the same analysis files.
+Run `21_followup_summary.R` for reverse Kaplan–Meier potential follow-up using full recorded times. Deaths are censored and living/last-contact observations treated as events for this calculation; the five-year prediction horizon does not truncate it. Outputs and method details are in `results/followup/`.
+
+## Integrity and citation
+
+`MANIFEST.json` records SHA-256 checksums. The MIT license applies to code, not to SEER patient data. Cite the repository URL and exact commit used; citation metadata are in `CITATION.cff`. This GitHub snapshot does not assign a Zenodo DOI to code that has not been deposited there.
