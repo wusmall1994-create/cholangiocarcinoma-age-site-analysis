@@ -1,5 +1,6 @@
 cff-version: 1.2.0
-message: "Please cite this software using the repository URL and commit identifier."
+message: "Please cite software release v1.4.0 and its Zenodo archive record."
+version: "v1.4.0"
 date-released: "2026-10-20"
 title: "Sensitivity of age-specific cholangiocarcinoma prognosis comparisons to death endpoints and primary sequence"
 type: software
