@@ -1,6 +1,6 @@
 # Cholangiocarcinoma prognosis across death endpoints and primary sequence
 
-Analysis code and aggregate results for **Sensitivity of age-specific cholangiocarcinoma prognosis comparisons to death endpoints and primary sequence**.
+Analysis code and aggregate results for **Age-specific prognosis comparisons between intrahepatic and extrahepatic cholangiocarcinoma depend on death endpoint definitions and primary sequence eligibility**.
 
 The study compares age-specific extrahepatic versus intrahepatic cholangiocarcinoma prognosis under SEER attribution, common biliary and common hepatobiliary death definitions, registry-recorded primary-sequence restrictions, and direct all-cause mortality. Individual-level SEER records, identifiers and fitted patient-level models are not distributed. Data access requires an authorized SEER export and data-use agreement: https://seer.cancer.gov/data/.
 
@@ -39,7 +39,7 @@ Run `Rscript 01_import_qc.R`. This produces `cca_strict_hazard_2004_2023.rds` an
 ## Endpoint and sequence analysis
 
 1. Set `CCA_ENDPOINT_MODE=point` and run `Rscript run_unified_ridge.R`.
-2. Run `Rscript core_baseline.R` and `python format_core_baseline.py` for the 15,578-record baseline summaries and formatted Table 1.
+2. Run `Rscript core_baseline.R` and `python format_core_baseline.py` for the 15,578-record baseline summaries and formatted Table 1. Run `Rscript sequence_support.R` for descriptive first/later-primary event support (Table S39).
 3. Set `CCA_ENDPOINT_MODE=bootstrap`, `CCA_ENDPOINT_B=2000`, `CCA_ENDPOINT_WORKERS=1`, and `CCA_ENDPOINT_WORKER=1`, then run `Rscript run_unified_ridge.R`.
 4. Run `Rscript summarize_unified_ridge.R`.
 5. Run `python audit_bootstrap.py` and `Rscript check_predictions_and_penalties.R`.
@@ -65,7 +65,7 @@ Ridge theta is fixed at 0.1 on all unscaled design columns, including spline/sit
 | Complete paired replicate estimates | `aggregate_bootstrap_contrasts.csv.gz` |
 | Table S38, broad-cohort baseline | `results/tables/broad_cohort_baseline.csv` |
 
-The replicate matrix has 2,000 samples × 447 contrasts and contains model estimates only. It is gzip-compressed; `audit_bootstrap.py` reads it directly. Local summarization produces an uncompressed CSV. Estimates are probabilities unless the field explicitly says percentage points; multiply by 100 for manuscript risk percentages and RDs. The numeric labels in the single-primary panels of Figure 3 use the same canonical estimates and intervals.
+The replicate matrix has 2,000 samples × 447 contrasts and contains model estimates only. It is gzip-compressed; `audit_bootstrap.py` reads it directly. Local summarization produces an uncompressed CSV. Estimates are probabilities unless the field explicitly says percentage points; multiply by 100 for manuscript risk percentages and RDs. Figure 3 labels the paired common-biliary-minus-SEER age contrast and its own bootstrap interval, as well as the single-primary estimates. `sequence_support.csv` and `S39_source.json` describe first versus later primary status within multiple-primary records. First-primary eCCA has 188 records and 21 SEER-attributed deaths; these support counts do not establish subgroup endpoint sensitivity. No additional subgroup bootstrap analysis is claimed.
 
 To reproduce the main figures from distributed aggregates, set `CCA_RESULTS_DIR` to the absolute `results/endpoint_sensitivity` directory and `CCA_FIGURE_OUTPUT_DIR` to a separate writable output directory, then run:
 
@@ -89,4 +89,4 @@ Run `21_followup_summary.R` for reverse Kaplan–Meier potential follow-up using
 
 ## Integrity and citation
 
-`MANIFEST.json` records SHA-256 checksums. The MIT license applies to code, not to SEER patient data. Cite software release [v1.4.1](https://github.com/wusmall1994-create/cholangiocarcinoma-age-site-analysis/releases/tag/v1.4.1) and its Zenodo archive record. Citation metadata are in `CITATION.cff`.
+`MANIFEST.json` records SHA-256 checksums. The MIT license applies to code, not to SEER patient data. Cite software release [v1.5.0](https://github.com/wusmall1994-create/cholangiocarcinoma-age-site-analysis/releases/tag/v1.5.0) and its Zenodo archive record. Citation metadata are in `CITATION.cff`.

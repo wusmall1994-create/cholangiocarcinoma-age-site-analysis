@@ -11,13 +11,13 @@
   },
   {
     "file": ".zenodo.json",
-    "bytes": 1631,
-    "sha256": "d6700ef9d006913c32df58344b736a49eb19a9880d5bfe26b28e6f60c3bb908e"
+    "bytes": 1684,
+    "sha256": "f13c30ee55921a27f199b20f557cf57027f855632c7007298ee10f332fd897be"
   },
   {
     "file": "CITATION.cff",
-    "bytes": 1368,
-    "sha256": "347ea1bac25f57da4eb07a175456a14835cf2a2a34272cce5ae88199742fe63f"
+    "bytes": 1421,
+    "sha256": "e19e362591b81751cad4951cdc0652920e76e04374eabf1fbd3bad2efac3affe"
   },
   {
     "file": "LICENSE",
@@ -26,8 +26,8 @@
   },
   {
     "file": "README.md",
-    "bytes": 10978,
-    "sha256": "e80b3088a09f28562227caaed35c66932a590e37c847ab92dee227f8391a776e"
+    "bytes": 11468,
+    "sha256": "c74c34ff19bf1c4b67aba5ba059f86fad13a648ae81cd26219fd93a6a8c9da1f"
   },
   {
     "file": "results/allcause_eligibility/allcause_contrasts_with_CI.csv",
@@ -326,8 +326,13 @@
   },
   {
     "file": "results/endpoint_sensitivity/Fig3_source.csv",
-    "bytes": 1892,
-    "sha256": "3ab953df14acbfb1ee5a4d044a8e3a83d263d0b6e86f11401f765bbf473a9dc4"
+    "bytes": 1911,
+    "sha256": "0b8d6579895682b79bf58f0b328beb7ce89321ad494775e4bb0ce89f8a5c2ed8"
+  },
+  {
+    "file": "results/endpoint_sensitivity/S39_source.json",
+    "bytes": 865,
+    "sha256": "a7c4bec501cd7038d5019abf34a7ec302d99150e0d9a0a620ef16dd437216dce"
   },
   {
     "file": "results/endpoint_sensitivity/Table1_source.json",
@@ -371,8 +376,8 @@
   },
   {
     "file": "results/endpoint_sensitivity/figure_contract.json",
-    "bytes": 881,
-    "sha256": "74fa65616e99fa2922c1b0f534c294f45ac05e0d2a4692b8b1ced7c29aa4b413"
+    "bytes": 895,
+    "sha256": "59ca5c575a90ddb246df00aad67591a74558413b03f21cdf3bf40c39056ee397"
   },
   {
     "file": "results/endpoint_sensitivity/half_sample_interval_stability.csv",
@@ -413,6 +418,11 @@
     "file": "results/endpoint_sensitivity/scenario621_audit.csv",
     "bytes": 135,
     "sha256": "6958a111c71c2b7e6256a5f2007daf7b672f9ced1e5ca25245fb29eddbdfbd12"
+  },
+  {
+    "file": "results/endpoint_sensitivity/sequence_support.csv",
+    "bytes": 1405,
+    "sha256": "98d02fef755b07e1467cfa04f4b61634f5d2a9220d777976d917559588fff84b"
   },
   {
     "file": "results/endpoint_sensitivity/sessionInfo.txt",
@@ -856,8 +866,8 @@
   },
   {
     "file": "scripts/draw_figures.py",
-    "bytes": 7627,
-    "sha256": "24bab4c24a04f3deacca3473c71f3d1b38fb10aa66a82ed07e5e9baeaf3a9b2f"
+    "bytes": 8301,
+    "sha256": "84808220d438c950b45438a3666d1724c0436ba4da5236cd8581735838833c5a"
   },
   {
     "file": "scripts/figures_cohort_and_definitions.py",
@@ -893,6 +903,11 @@
     "file": "scripts/run_unified_ridge.R",
     "bytes": 23504,
     "sha256": "d32a2dcc9bdf5ec059fa79cbbb6d9aa028764340a4abecdf3d9f739e1c3774d4"
+  },
+  {
+    "file": "scripts/sequence_support.R",
+    "bytes": 724,
+    "sha256": "63156f688eb4082f592b330e883de04d752ce3f0a9ec41ecb3c23124654d60e0"
   },
   {
     "file": "scripts/summarize_allcause_eligibility.R",

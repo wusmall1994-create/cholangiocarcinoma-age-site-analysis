@@ -1,0 +1,65 @@
+[
+  [
+    "Sequence",
+    "Site",
+    "Records",
+    "SEER deaths",
+    "Biliary deaths",
+    "Hepatobiliary deaths",
+    "Ages 40\u201359 / 65\u201384"
+  ],
+  [
+    "Single primary",
+    "iCCA",
+    "7668",
+    "6783",
+    "5237",
+    "6128",
+    "2132 / 4130"
+  ],
+  [
+    "Single primary",
+    "eCCA",
+    "4554",
+    "3958",
+    "3097",
+    "3460",
+    "1058 / 2792"
+  ],
+  [
+    "First in multiple",
+    "iCCA",
+    "324",
+    "171",
+    "137",
+    "158",
+    "80 / 164"
+  ],
+  [
+    "First in multiple",
+    "eCCA",
+    "188",
+    "21",
+    "93",
+    "101",
+    "43 / 115"
+  ],
+  [
+    "Later in multiple",
+    "iCCA",
+    "1850",
+    "1277",
+    "1085",
+    "1276",
+    "289 / 1343"
+  ],
+  [
+    "Later in multiple",
+    "eCCA",
+    "994",
+    "168",
+    "637",
+    "706",
+    "126 / 772"
+  ]
+]

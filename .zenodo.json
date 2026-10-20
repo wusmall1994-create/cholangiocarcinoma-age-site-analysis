@@ -1,5 +1,5 @@
 {
-  "title": "Sensitivity of age-specific cholangiocarcinoma prognosis comparisons to death endpoints and primary sequence",
+  "title": "Age-specific prognosis comparisons between intrahepatic and extrahepatic cholangiocarcinoma depend on death endpoint definitions and primary sequence eligibility",
   "description": "Analysis code and non-identifiable aggregate results for age-specific cholangiocarcinoma prognosis comparisons across death endpoints and registry-recorded primary sequence. Includes 2,000 paired patient-cluster bootstrap samples with fixed ridge regularization, classification crosswalks, directed reclassification sensitivity, all-cause mortality, baseline summaries and supplementary anatomical analyses. No patient records or fitted patient-level model objects are distributed.",
   "creators": [
     {
@@ -32,5 +32,5 @@
   "license": "MIT",
   "upload_type": "software",
   "access_right": "open",
-  "version": "v1.4.1"
+  "version": "v1.5.0"
 }
