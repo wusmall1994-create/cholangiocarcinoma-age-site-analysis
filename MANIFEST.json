@@ -11,13 +11,13 @@
   },
   {
     "file": ".zenodo.json",
-    "bytes": 1608,
-    "sha256": "9b3e7e31c99d1e326eb8e5bbed3b9a308e64f725ee4e9e49e9b83221ac86d864"
+    "bytes": 1631,
+    "sha256": "d6700ef9d006913c32df58344b736a49eb19a9880d5bfe26b28e6f60c3bb908e"
   },
   {
     "file": "CITATION.cff",
-    "bytes": 1357,
-    "sha256": "0436186e87f7931699fb89e7c7374b6f389e971d9d0fec98539a67cbb5a07f2d"
+    "bytes": 1368,
+    "sha256": "347ea1bac25f57da4eb07a175456a14835cf2a2a34272cce5ae88199742fe63f"
   },
   {
     "file": "LICENSE",
@@ -26,8 +26,8 @@
   },
   {
     "file": "README.md",
-    "bytes": 10960,
-    "sha256": "60a41fba9d7cc522a8e33960a1a9c8ffdc724a8b1a2b03753b672a23ae2649be"
+    "bytes": 10978,
+    "sha256": "e80b3088a09f28562227caaed35c66932a590e37c847ab92dee227f8391a776e"
   },
   {
     "file": "results/allcause_eligibility/allcause_contrasts_with_CI.csv",

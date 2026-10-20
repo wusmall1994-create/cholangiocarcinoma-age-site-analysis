@@ -89,4 +89,4 @@ Run `21_followup_summary.R` for reverse Kaplan–Meier potential follow-up using
 
 ## Integrity and citation
 
-`MANIFEST.json` records SHA-256 checksums. The MIT license applies to code, not to SEER patient data. Cite the repository URL and exact commit used; citation metadata are in `CITATION.cff`. This GitHub snapshot does not assign a Zenodo DOI to code that has not been deposited there.
+`MANIFEST.json` records SHA-256 checksums. The MIT license applies to code, not to SEER patient data. Cite software release [v1.4.1](https://github.com/wusmall1994-create/cholangiocarcinoma-age-site-analysis/releases/tag/v1.4.1) and its Zenodo archive record. Citation metadata are in `CITATION.cff`.
