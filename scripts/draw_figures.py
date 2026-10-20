@@ -161,8 +161,6 @@ for col,(lab,n,g) in enumerate(groups):
 pair=next(x for x in rows if x['sequence_group']=='All' and x['definition']=='Common_biliary_minus_SEER' and x['state']=='cancer' and x['contrast']=='RD_change_75_minus_50')
 pv,pl,ph=[100*float(pair[k]) for k in ['estimate','lower95','upper95']]
 a=axs[1,0]
-a.annotate('',xy=(16,1),xytext=(16,2),arrowprops={'arrowstyle':'|-|','lw':.8,'color':colors[1]})
-a.text(13.5,1.5,f'{pv:.2f} pp',rotation=90,ha='center',va='center',fontsize=7,color=colors[1])
 fig.text(.235,.022,f'Paired common biliary − SEER age contrast: {pv:.2f} pp (95% CI {pl:.2f} to {ph:.2f})',fontsize=7.5,color=colors[1])
 fig.subplots_adjust(left=.235,right=.98,top=.82,bottom=.19,wspace=.18,hspace=.65)
 
