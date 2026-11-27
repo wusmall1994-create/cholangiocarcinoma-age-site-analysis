@@ -51,12 +51,16 @@ forest(a,[
 for y,label in [(8,'Cause-known cohort (N = 15,578)'),(3,'Single-primary subset (N = 12,222)'),(1,'Expanded cohort (N = 15,780)')]:
     a.text(-.045,y,label,transform=a.get_yaxis_transform(),ha='right',va='center',fontweight='bold',fontsize=8.5)
 change='RD_change_75_minus_50'
+with (here/'results/sequence_sensitivity/A40_summary.csv').open() as f:
+    row = next(r for r in csv.DictReader(f) if r['definition']=='Common_biliary_minus_SEER' and r['contrast']=='RD_age75')
+    data[('First','Common_biliary_minus_SEER',age)] = tuple(100*float(row[k]) for k in ('estimate','lower95','upper95'))
 forest(b,[
-    (3,'Common biliary vs SEER, age 75',('All','Common_biliary_minus_SEER','RD_age75'),blue),
-    (2,'Common biliary vs SEER, age 50',('All','Common_biliary_minus_SEER','RD_age50'),blue),
+    (4,'Full cohort, age 75',('All','Common_biliary_minus_SEER','RD_age75'),blue),
+    (3,'First-sequenced subset, age 75',('First','Common_biliary_minus_SEER',age),green),
+    (2,'Full cohort, age 50',('All','Common_biliary_minus_SEER','RD_age50'),blue),
     (1,'Common biliary vs SEER, 75 minus 50',('All','Common_biliary_minus_SEER',change),blue),
     (0,'621-death scenario vs SEER, 75 minus 50',('All','Scenario621_minus_SEER',change),gray),
-],(-.55,4.1),(-2,21),5,'B   Paired effect of changing the endpoint','Change in five-year risk difference (percentage points)',3.85)
+],(-.55,5.3),(-2,21),5,'B   Paired effect of changing the endpoint','Change in five-year risk difference (percentage points)',5.0)
 fig.canvas.draw()
 
 def export(fig,n):
@@ -93,3 +97,25 @@ ax.text(.02,.04,'590 of the 621 targeted deaths identified across full follow-up
         color=red,fontsize=8.5,va='center')
 fig.canvas.draw()
 export(fig,3)
+
+# Main analysis populations. Counts are tumor records.
+fig, ax = plt.subplots(figsize=(8,5))
+ax.set(xlim=(0,1),ylim=(0,1))
+ax.axis('off')
+def box(x,y,label):
+    ax.text(x,y,label,ha='center',va='center',fontsize=10,
+            bbox=dict(boxstyle='round,pad=0.65',facecolor='#f2f7f8',edgecolor='#17546b'))
+def arrow(x,y,u,v):
+    ax.annotate('',xy=(u,v),xytext=(x,y),arrowprops=dict(arrowstyle='->',color=gray))
+box(.5,.90,'Malignant C22.1 or C24.0 tumors, 2000–2023\n45,243 records after export exclusions')
+box(.5,.65,'Eligible histology: 31,086 records\nDiagnosed in 2004–2023: 28,654')
+arrow(.5,.82,.5,.74)
+box(.24,.39,'Age-by-site hazard analysis\n2004–2023, ages 15–84\n25,400 cause-known records')
+box(.76,.39,'Direct all-cause mortality\n2004–2018, ages 15–84\n15,780 records')
+arrow(.45,.57,.25,.50)
+arrow(.55,.57,.75,.50)
+box(.76,.12,'Paired endpoint comparison\n15,578 cause-known records')
+arrow(.76,.28,.76,.20)
+ax.text(.70,.235,'Exclude 202 deaths of unknown cause',ha='right',va='center',fontsize=9)
+export(fig,1)
+plt.close(fig)

@@ -12,12 +12,12 @@
   {
     "file": ".zenodo.json",
     "bytes": 1684,
-    "sha256": "a7a4ef438e6efb3c6fc5029da100fd27084408686e99c84e15c4d1086e39e2a4"
+    "sha256": "0653741667f3ff0ca6f423b0ecff59ad368bc934c52f78a516b681343d7c69e7"
   },
   {
     "file": "CITATION.cff",
     "bytes": 1391,
-    "sha256": "825e862a63a67bfa64d8f31344adb9b7b59792db42dfc6e20dc824172fc81d16"
+    "sha256": "bc1b80b777b5f2805b14a85ae90e6c075d68fa745a04f48389cdc8221daefdcb"
   },
   {
     "file": "LICENSE",
@@ -27,7 +27,7 @@
   {
     "file": "README.md",
     "bytes": 12538,
-    "sha256": "0a17271d31720830ce6bd005aeece641e51b93d9e1a13213ece64bc62698c593"
+    "sha256": "4364676f952c2092f3dbf5f03b5272c84639ee81480d795502d5592b6f1dbc89"
   },
   {
     "file": "results/allcause_eligibility/allcause_contrasts_with_CI.csv",
@@ -891,8 +891,8 @@
   },
   {
     "file": "scripts/figure_endpoint_comparisons.py",
-    "bytes": 5243,
-    "sha256": "7b8ae5db31c0c5715917740132b9bec2447140308781e083ad1210312279243b"
+    "bytes": 6684,
+    "sha256": "88e561e18b6e6b55f6c9ee7b7f832545c382656772fdbf8338e683c711b78b92"
   },
   {
     "file": "scripts/figures_cohort_and_definitions.py",
