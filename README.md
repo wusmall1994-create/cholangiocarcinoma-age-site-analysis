@@ -89,4 +89,18 @@ Run `21_followup_summary.R` for reverse Kaplan–Meier potential follow-up using
 
 ## Integrity and citation
 
-`MANIFEST.json` records SHA-256 checksums. The MIT license applies to code, not to SEER patient data. Cite software release [v1.5.1](https://github.com/wusmall1994-create/cholangiocarcinoma-age-site-analysis/releases/tag/v1.5.1) and its Zenodo archive record. Citation metadata are in `CITATION.cff`.
+`MANIFEST.json` records SHA-256 checksums. The MIT license applies to code, not to SEER patient data. Cite software release [v1.6.0](https://github.com/wusmall1994-create/cholangiocarcinoma-age-site-analysis/releases/tag/v1.6.0). Citation metadata are in `CITATION.cff`.
+
+## First-sequenced primaries and penalty sensitivity
+
+From the repository root, set CCA_DERIVED_DIR and CCA_COD_CSV as described above. The following commands use one worker. For parallel fitting, launch workers numbered 1 through N with N as the second argument and the same output directory for a given analysis.
+
+~~~sh
+Rscript scripts/first_primary.R 1 1 local_results/first
+Rscript scripts/summarize_first.R local_results/first
+Rscript scripts/penalty_sensitivity.R 1 1 local_results/penalty
+Rscript scripts/summarize_penalties.R local_results/penalty local_results/first/summary.csv local_results/A41_summary.csv
+python scripts/figure_endpoint_comparisons.py
+~~~
+
+Table A40 covers 12,734 records from 12,734 patients with sequence 00 or 01. Table A41 gives the common biliary minus SEER paired differences in percentage points across three ridge penalties for the full and first-sequenced cohorts. The original theta 0.1 intervals and alternative penalties use the same 2,000 seeded patient-cluster draws. Aggregate outputs and five-year Figure 3 counts are under results/sequence_sensitivity.

@@ -1,0 +1,9 @@
+sequence,site,endpoint,seer_only,common_only
+Single,iCCA,Biliary,1501,0
+Single,iCCA,Hepatobiliary,635,0
+Single,eCCA,Biliary,836,0
+Single,eCCA,Hepatobiliary,478,0
+Multiple,iCCA,Biliary,312,98
+Multiple,iCCA,Hepatobiliary,146,135
+Multiple,eCCA,Biliary,73,590
+Multiple,eCCA,Hepatobiliary,49,640

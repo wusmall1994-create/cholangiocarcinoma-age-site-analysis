@@ -1,0 +1,9 @@
+site_group,Sequence number,records,patients,endpoint_deaths,complement_deaths,definition
+iCCA,One primary only,7668,7668,6783,404,SEER_original
+eCCA,One primary only,4554,4554,3958,362,SEER_original
+eCCA,1st of 2 or more primaries,188,188,21,135,SEER_original
+iCCA,1st of 2 or more primaries,324,324,171,83,SEER_original
+iCCA,One primary only,7668,7668,5237,1950,Common_biliary
+eCCA,One primary only,4554,4554,3097,1223,Common_biliary
+eCCA,1st of 2 or more primaries,188,188,93,63,Common_biliary
+iCCA,1st of 2 or more primaries,324,324,137,117,Common_biliary

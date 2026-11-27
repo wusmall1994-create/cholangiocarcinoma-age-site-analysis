@@ -12,12 +12,12 @@
   {
     "file": ".zenodo.json",
     "bytes": 1684,
-    "sha256": "3601f61f489c3201f2a1a52f26ca9f67e7920f598c8585e5d45987f99a5bdc1b"
+    "sha256": "a7a4ef438e6efb3c6fc5029da100fd27084408686e99c84e15c4d1086e39e2a4"
   },
   {
     "file": "CITATION.cff",
-    "bytes": 1421,
-    "sha256": "75190f74f41372ccf0f176e2799b4be85abd0fa27a7176a7aded9fee3c0a0dc8"
+    "bytes": 1391,
+    "sha256": "825e862a63a67bfa64d8f31344adb9b7b59792db42dfc6e20dc824172fc81d16"
   },
   {
     "file": "LICENSE",
@@ -26,8 +26,8 @@
   },
   {
     "file": "README.md",
-    "bytes": 11468,
-    "sha256": "f2c5ffd55f41efb81529a03b20edc3790fa9fe0154e5a4c7dba036f1eddf809b"
+    "bytes": 12538,
+    "sha256": "0a17271d31720830ce6bd005aeece641e51b93d9e1a13213ece64bc62698c593"
   },
   {
     "file": "results/allcause_eligibility/allcause_contrasts_with_CI.csv",
@@ -490,6 +490,26 @@
     "sha256": "1a4675cb74abf1317df32cfcd8f654c7d7ca65ddbe9bc7617f6bfc99e42ffc74"
   },
   {
+    "file": "results/sequence_sensitivity/A40_counts.csv",
+    "bytes": 559,
+    "sha256": "0b01df25df232c9451561dfa7cc216202a91fb53ca1f88a793c7a5ecb2e07266"
+  },
+  {
+    "file": "results/sequence_sensitivity/A40_summary.csv",
+    "bytes": 983,
+    "sha256": "673d0fd95b8ee214cfee4ddb9e294008a4a80ede9a457a0f8f82f571c805f96d"
+  },
+  {
+    "file": "results/sequence_sensitivity/A41_summary.csv",
+    "bytes": 1433,
+    "sha256": "3eda812a837806d4fe546780621ae0f5500cd335c40b45d28f9d0b0e0f0f50b0"
+  },
+  {
+    "file": "results/sequence_sensitivity/Fig3_counts.csv",
+    "bytes": 291,
+    "sha256": "f80e767a8afea592e3bf672e31664fa877ef864dc77a6b6944442495b587ccde"
+  },
+  {
     "file": "results/tables/age_site_event_cells.csv",
     "bytes": 268,
     "sha256": "f86513afa7ec03496bc187ea5a005714ad720ec8abbc23d21140e591332f9720"
@@ -870,6 +890,11 @@
     "sha256": "c06ea400b9e3910c20d039b884d6e34fdf2176dc03ba1c8a18ec702d4559fe9b"
   },
   {
+    "file": "scripts/figure_endpoint_comparisons.py",
+    "bytes": 5243,
+    "sha256": "7b8ae5db31c0c5715917740132b9bec2447140308781e083ad1210312279243b"
+  },
+  {
     "file": "scripts/figures_cohort_and_definitions.py",
     "bytes": 5473,
     "sha256": "59257e84a2fdcdef6fc98b49e7846c7e3ed93dbe461834b06f217556c5fb4f7e"
@@ -885,6 +910,11 @@
     "sha256": "a6900e9e13a472bf003e08003b842a307999843d795322a2d9316afebb60e84a"
   },
   {
+    "file": "scripts/first_primary.R",
+    "bytes": 1764,
+    "sha256": "2333e259ee8fab47605014e3f83c2f3f055ae09ebf6cd4573a5652dfbf563155"
+  },
+  {
     "file": "scripts/format_core_baseline.py",
     "bytes": 2973,
     "sha256": "743d9f84ea63bcd43c22514ac74bdfabbcdb12cf1f4f3ea4bf668a78e863d7e0"
@@ -898,6 +928,11 @@
     "file": "scripts/paired_bootstrap_protocol.json",
     "bytes": 2260,
     "sha256": "c8a0df583a9b979b207fc65c160aeb00deed1df7e9dbfda31f4d04e627aa7807"
+  },
+  {
+    "file": "scripts/penalty_sensitivity.R",
+    "bytes": 1451,
+    "sha256": "28a663aa7b161eab83661520b67501843c4720f4036d8be49ef8f4da7be66419"
   },
   {
     "file": "scripts/run_unified_ridge.R",
@@ -920,9 +955,19 @@
     "sha256": "46ee52651aad357aff1dd4d600d28de9d6b71138fb7b29d9c1f34316cbc62bd0"
   },
   {
+    "file": "scripts/summarize_first.R",
+    "bytes": 1156,
+    "sha256": "22bc3c3cb5fb0708ad197c7b599c9b4fb3e92dc6d1e14a1c21e0fbfd1ec065e7"
+  },
+  {
     "file": "scripts/summarize_original_ridge.R",
     "bytes": 1498,
     "sha256": "4796030b8f497043dbcf48cc4ec3a8ac0badc504e9ad14141d35a97a98953c1b"
+  },
+  {
+    "file": "scripts/summarize_penalties.R",
+    "bytes": 1263,
+    "sha256": "6a6ca41bc867ef6c579af62f4d321a2a5dfd355935f84d776f08b25b84b8f245"
   },
   {
     "file": "scripts/summarize_unified_ridge.R",
